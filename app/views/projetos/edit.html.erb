@@ -1,28 +1,37 @@
-<h1>Editing projeto</h1>
-
+<h3>Editar Projeto</h3>
 <% form_for(@projeto) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :Nome %><br />
-    <%= f.text_field :Nome %>
-  </p>
-  <p>
-    <%= f.label :DtInicio %><br />
-    <%= f.date_select :DtInicio %>
-  </p>
-  <p>
-    <%= f.label :DtTermino %><br />
-    <%= f.date_select :DtTermino %>
-  </p>
-  <p>
-    <%= f.label :Orcamento %><br />
-    <%= f.text_field :Orcamento %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+<%= f.error_messages %>
+<ul class="orcamento">
+	<li>
+		Nome
+	</li>
+	<li>
+		<%= f.text_field :Nome, :class => "txt" %>
+	</li>
+	<li>
+		Data Inicial
+	</li> 
+	<li>
+		<%= f.text_field :DtInicio, :class => "txt" %>
+		<img src="/images/date.png" />
+	</li>
+	<li>
+		Data Final
+	</li> 
+	<li>
+		<%= f.text_field :DtTermino, :class => "txt" %>
+		<img src="/images/date.png" />
+	</li>
+	<li>
+		Orçamento
+	</li>
+	<li>
+		<%= f.text_field :Orcamento, :class => "txt" %>
+	</li>
+	<li>
+		<%= f.submit "ATUALIZAR", :class => "sub" %>
+	</li>
+</ul>
 <% end %>
-
-<%= link_to 'Show', @projeto %> |
-<%= link_to 'Back', projetos_path %>
+<%= link_to 'Mostrar', @projeto %> |
+<%= link_to 'Voltar', projetos_path %>

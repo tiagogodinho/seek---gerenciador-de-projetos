@@ -5172,3 +5172,87 @@ Processing ProjetosController#new (for 127.0.0.1 at 2009-02-17 15:30:37) [GET]
 Rendering template within layouts/principal
 Rendering projetos/new
 Completed in 125ms (View: 47, DB: 0) | 200 OK [http://localhost/projetos/new]
+
+
+Processing ProjetosController#index (for 127.0.0.1 at 2009-02-17 15:35:32) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+Rendering template within layouts/principal
+Rendering projetos/index
+  [4;36;1mProjeto Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+Completed in 125ms (View: 77, DB: 16) | 200 OK [http://localhost/projetos]
+
+
+Processing ProjetosController#edit (for 127.0.0.1 at 2009-02-17 15:35:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mProjeto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 2) [0m
+Rendering template within layouts/principal
+Rendering projetos/edit
+Completed in 203ms (View: 125, DB: 0) | 200 OK [http://localhost/projetos/2/edit]
+
+
+Processing ProjetosController#update (for 127.0.0.1 at 2009-02-17 15:35:44) [PUT]
+  Parameters: {"commit"=>"Atualizar", "projeto"=>{"DtTermino"=>"2009-02-17", "Nome"=>"Mix São Paulo", "Orcamento"=>"100", "DtInicio"=>"2009-02-17"}, "authenticity_token"=>"e20987614bb663243caa4937a63351ce281916d1", "id"=>"2"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (31.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 2) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProjeto Update (16.0ms)[0m   [0;1mUPDATE `projetos` SET `Nome` = 'Mix São Paulo', `updated_at` = '2009-02-17 18:35:44' WHERE `id` = 2[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mCOMMIT[0m
+Redirected to #<Projeto:0x46813a8>
+Completed in 125ms (DB: 62) | 302 Found [http://localhost/projetos/2]
+
+
+Processing ProjetosController#show (for 127.0.0.1 at 2009-02-17 15:35:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 2) [0m
+Rendering template within layouts/principal
+Rendering projetos/show
+Completed in 125ms (View: 63, DB: 16) | 200 OK [http://localhost/projetos/2]
+
+
+Processing ProjetosController#show (for 127.0.0.1 at 2009-02-17 15:35:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mProjeto Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 2) [0m
+Rendering template within layouts/principal
+Rendering projetos/show
+Completed in 125ms (View: 78, DB: 15) | 200 OK [http://localhost/projetos/2]
+
+
+Processing ProjetosController#edit (for 127.0.0.1 at 2009-02-17 15:35:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 2) [0m
+Rendering template within layouts/principal
+Rendering projetos/edit
+Completed in 313ms (View: 266, DB: 15) | 200 OK [http://localhost/projetos/2/edit]
+
+
+Processing ProjetosController#index (for 127.0.0.1 at 2009-02-17 15:36:02) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Load (16.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+Rendering template within layouts/principal
+Rendering projetos/index
+  [4;35;1mProjeto Columns (31.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+Completed in 93ms (View: 31, DB: 47) | 200 OK [http://localhost/projetos]
