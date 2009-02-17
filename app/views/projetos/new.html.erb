@@ -1,36 +1,5 @@
 <h3>Novo Projeto</h3>
-<% form_for(@projeto) do |f| %>
-<%= f.error_messages %>
-<ul class="orcamento">
-	<li>
-		Nome
-	</li>
-	<li>
-		<%= f.text_field :Nome, :class => "txt" %>
-	</li>
-	<li>
-		Data Inicial
-	</li> 
-	<li>
-		<%= f.text_field :DtInicio, :class => "txt" %>
-		<img src="/images/date.png" />
-	</li>
-	<li>
-		Data Final
-	</li> 
-	<li>
-		<%= f.text_field :DtTermino, :class => "txt" %>
-		<img src="/images/date.png" />
-	</li>
-	<li>
-		Orçamento
-	</li>
-	<li>
-		<%= f.text_field :Orcamento, :class => "txt" %>
-	</li>
-	<li>
-		<%= f.submit "CRIAR", :class => "sub" %>
-	</li>
-</ul>
-<% end %>
+
+<%= render :partial => "form" %>
+
 <%= link_to 'Voltar', projetos_path %>
