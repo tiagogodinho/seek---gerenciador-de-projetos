@@ -37,7 +37,7 @@
 				<div class="meio">
                 
 					<div class="left">
-                    	<!--
+                    		
 						<div class="novo">
 							<a href="#">NOVO PROJETO</a>
 						</div>
@@ -48,24 +48,15 @@
                             	<div id="rr"></div>
                             </h1>
                             
-                            <div class="projetos">
-                            	<h2 class="unsel">
-                            		<a href="#">Projeto 1</a>
-                            		<img src="/images/exp_opt.png" />
-                            	</h2>
-								<div class="accordion">
-                                    <ul>
-                                        <li><a href="#">123</a></li>
-                                        <li><a href="#">123</a></li>
-                                        <li><a href="#">123</a></li>
-                                        <li><a href="#">13</a></li>
-                                    </ul>
-                                </div>
-							</div>
+                            <% for projeto in @projetos %>
                             
                             <div class="projetos">
+                            <% if params[:id] == projeto.id.to_s %>
+                            	<h2 class="sel">
+                            <% else %>		
                             	<h2 class="unsel">
-                            		<a href="#">Projeto 2</a>
+                            <% end %>
+                            		<a href="#"><%= projeto.Nome %></a>
                             		<img src="/images/exp_opt.png" />
                             	</h2>
 								<div class="accordion">
@@ -77,8 +68,10 @@
                                     </ul>
                                 </div>
 							</div>
+							
+                            <% end %>
+                            
 						</div>
-                        -->
 					</div>
                     
 					<div class="right">
