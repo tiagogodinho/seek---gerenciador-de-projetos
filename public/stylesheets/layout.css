@@ -1,0 +1,90 @@
+body		{margin:0px; padding:0px; font-family:Trebuchet Ms; font-size:12px;}
+
+ul, li, span, p, a, form, h1, h2, img		{padding:0px; margin:0px; list-style-type:none; border:0px;}
+
+a		{text-decoration:none; color:#000;}
+a:hover	{text-decoration:underline;}
+
+
+/*----------- ESTRUTURA PADRÃO --------------*/
+.web		{width:100%; min-width:980px; height:auto; float:left;}
+.mae		{width:980px; height:auto; float:left; position:relative; left:50%; margin-left:-490px;}
+
+.topo		{width:100%; height:80px; float:left;}
+.topo img	{float:left; margin:10px;}
+.topo ul	{width:300px; height:auto; float:right; color:#999; text-align:right; padding-top:18px}
+.topo li	{width:100%; height:auto; float:left;}
+.topo li strong	{font-size:15px; color:#000;} 
+
+.menu		{width:100%; height:30px; float:left; background:url(/images/bgmenu.jpg) repeat-x;}
+.menu #lr	{width:5px; height:30px; float:left;}
+.menu #rr	{width:5px; height:30px; float:right;}
+.menu ul	{width:auto; height:auto; float:left; line-height:30px; text-transform:uppercase; }
+.menu li	{width:auto; float:left; float:left; padding:0px 15px 0px 15px; }
+.menu a 	{color:#FFF	;}
+.menu li:hover	{background-color:#696969; cursor:pointer;}
+
+.menu ul#opt	{width:170px; float:right; font-size:11px;}
+.menu li#sair	{background:url(/images/hovermenu.jpg);}
+.menu li#sair:hover	{background:#696969;}
+
+/*----------- ESTRUTURA MEIO --------------*/
+.meio			{width:100%; height:auto; float:left; margin-top:15px;}
+
+.left			{width:200px; height:auto; float:left; display:block;}
+.left .box		{width:100%; height:auto; float:left; background:url(/images/bgleft.jpg) repeat-y top left;}
+
+.box .projetos		{width:189px; height:auto; float:left; padding-left:1px;  border-bottom:solid 1px #E5E5E5;}
+.box .accordion		{width:100%; height:auto; float:left;}
+
+.box h1			{width:190px; height:30px; float:left; font-size:12px; background:url(/images/bgtitle.jpg) repeat-x; line-height:30px; font-weight:normal; text-transform:uppercase;}
+.meio #lr		{width:5px; height:30px; float:left; background:url(/images/lrtitle.jpg) no-repeat;}
+.meio #rr		{width:5px; height:30px; float:right; background:url(/images/rrtitle.jpg) no-repeat;}
+.box h1 span		{width:auto; height:auto; float:left; text-indent:10px; color:#000; font-size:14px;}
+
+.box h2			{width:188px; height:auto; float:left; clear:both; line-height:30px; font-size:13px; color:#006699; text-indent:5px; font-weight:normal;}
+.box h2.unsel	{background:url(/images/bgopt.jpg) repeat-x;}
+.box h2.sel	{background:url(/images/opt_sel.jpg) no-repeat; padding-right:10px;}
+.box h2.sel a	{color:#FFF;}
+.box h2 img		{float:right; cursor:pointer;}
+.box h2 a		{width:auto; height:auto; float:left; text-indent:10px; color:#006699;}
+
+.box h3		{width:100%; height:auto; float:left; font-size:16px; border-bottom:solid 1px #e5e5e5; text-transform:uppercase; text-indent:10px;}
+
+.accordion ul	{width:100%; height:auto; float:left; text-indent:10px;}
+.accordion li	{width:100%; height:auto; float:left;}
+.accordion li a	{color:#000;}
+
+.right			{height:auto; margin-left:205px;} 
+.right #conteudo	{width:780px; height:400px; float:left;}
+
+.right h1		{width:100%; height:30px; float:left; font-size:12px; background:url(/images/bgtitle.jpg) repeat-x; line-height:29px; font-weight:normal; text-transform:uppercase;}
+.right h1 span		{width:auto; height:auto; float:left; text-indent:10px; color:#000; font-size:14px;}
+.right h1 ul		{width:770px; height:29px; float:left; padding-top:1px;}
+.right h1 ul li		{width:auto; height:auto; float:left; padding-left:10px; padding-right:10px;}
+.right h1 ul li#sel	{background:#FFF; border-left:solid 1px #E6E6E6; border-right:solid 1px #E6E6E6;}
+
+.right #conteudo .box	{width:778px; height:auto; float:left; border:solid 1px #E6E6E6; border-top:0px;}
+
+.novo		{width:188px; height:30px; float:left; font-size:12px; background:url(/images/bgtitle.jpg) repeat-x; line-height:30px; font-weight:normal; text-transform:uppercase; border:solid 1px #E5E5E5; margin-bottom:15px; border-top:0px; text-indent:10px; font-weight:bold;}
+.novo a		{color:#006699;}
+
+
+.orcamento			{width:auto; height:auto; float:left; padding:15px;}
+.orcamento li		{width:100%; height:auto; float:left; font-weight:bold;}
+.orcamento li .txt	{width:250px; height:22px; float:left; border:solid 1px #899AAA; line-height:22px; margin-right:5px; margin-bottom:10px;}
+.orcamento li .sub 	{width:auto; height:25px; float:left; border:solid 1px #899AAA; background:#000 url(/images/bgbt.jpg) repeat-x left top; font-size:10px; margin-top:10px; cursor:pointer; color:#FFF; margin-right:5px;}
+.orcamento li img	{float:left;}
+
+.tarefas 			{width:745px; height:auto; float:left; padding:15px;}
+.tarefas li			{width:100%; height:auto; float:left;}
+.tarefas li#item		{border-bottom:solid 1px #EDEDED; color:#666; padding-top:3px; padding-bottom:3px;}
+.tarefas li span#comment	{width:80px; height:auto; float:left; text-align:right; padding-right:5px; padding-left:5px; background:#6A97AE; color:#FFF}
+.tarefas li span#todo		{width:80px; height:auto; float:left; text-align:right; padding-right:5px; padding-left:5px; background:#CA740D; color:#FFF}
+.tarefas li span#message	{width:80px; height:auto; float:left; text-align:right; padding-right:5px; padding-left:5px; background:#354C7E; color:#FFF}
+.tarefas li span#writeboard	{width:80px; height:auto; float:left; text-align:right; padding-right:5px; padding-left:5px; background:#28A79C; color:#FFF}
+.tarefas li span#milestone	{width:80px; height:auto; float:left; text-align:right; padding-right:5px; padding-left:5px; background:#656F4D; color:#FFF}
+.tarefas li#item a		{color:#354C7E; float:left; padding-left:5px; padding-right:5px;}
+.tarefas li#item span#ctr	{width:auto; float:left; padding-left:5px;}
+.tarefas li span#date	{width:auto; height:auto; float:left; color:#666; border-bottom:solid 1px #CACACC; font-size:11px; text-transform:uppercase;}
+.tarefas li span#sign	{width:auto; height:auto; float:right; font-size:11px; color:#999;}
