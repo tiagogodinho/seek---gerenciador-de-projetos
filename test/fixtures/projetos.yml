@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Nome: MyString
+  DtInicio: 2009-02-17
+  DtTermino: 2009-02-17
+  Orcamento: 1.5
+
+two:
+  Nome: MyString
+  DtInicio: 2009-02-17
+  DtTermino: 2009-02-17
+  Orcamento: 1.5

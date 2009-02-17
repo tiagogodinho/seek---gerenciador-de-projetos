@@ -1,0 +1,23 @@
+<p>
+  <b>Nome:</b>
+  <%=h @projeto.Nome %>
+</p>
+
+<p>
+  <b>Dtinicio:</b>
+  <%=h @projeto.DtInicio %>
+</p>
+
+<p>
+  <b>Dttermino:</b>
+  <%=h @projeto.DtTermino %>
+</p>
+
+<p>
+  <b>Orcamento:</b>
+  <%=h @projeto.Orcamento %>
+</p>
+
+
+<%= link_to 'Edit', edit_projeto_path(@projeto) %> |
+<%= link_to 'Back', projetos_path %>

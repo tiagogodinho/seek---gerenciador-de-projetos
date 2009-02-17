@@ -1,0 +1,26 @@
+<h1>Listing projetos</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Dtinicio</th>
+    <th>Dttermino</th>
+    <th>Orcamento</th>
+  </tr>
+
+<% for projeto in @projetos %>
+  <tr>
+    <td><%=h projeto.Nome %></td>
+    <td><%=h projeto.DtInicio %></td>
+    <td><%=h projeto.DtTermino %></td>
+    <td><%=h projeto.Orcamento %></td>
+    <td><%= link_to 'Show', projeto %></td>
+    <td><%= link_to 'Edit', edit_projeto_path(projeto) %></td>
+    <td><%= link_to 'Destroy', projeto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New projeto', new_projeto_path %>
