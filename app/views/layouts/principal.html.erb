@@ -25,7 +25,7 @@
 				<div class="menu">
 					<div id="lr"><img src="/images/lrmenu.jpg" /></div>
 					<ul>
-						<a href="#"><li>Inicial</li></a>	
+						<a href="/projetos"><li>Inicial</li></a>	
 					</ul>
 					<div id="rr"><img src="/images/rrmenu.jpg" /></div>
                     <ul id="opt">
@@ -37,41 +37,8 @@
 				<div class="meio">
                 
 					<div class="left">
-                    		
-						<div class="novo">
-							<a href="#">NOVO PROJETO</a>
-						</div>
-						<div class="box">
-							<h1>
-                            	<div id="lr"></div>
-                            	<span>Projetos</span>
-                            	<div id="rr"></div>
-                            </h1>
-                            
-                            <% for projeto in @projetos %>
-                            
-                            <div class="projetos">
-                            <% if params[:id] == projeto.id.to_s %>
-                            	<h2 class="sel">
-                            <% else %>		
-                            	<h2 class="unsel">
-                            <% end %>
-                            		<a href="#"><%= projeto.Nome %></a>
-                            		<img src="/images/exp_opt.png" />
-                            	</h2>
-								<div class="accordion">
-                                    <ul>
-                                        <li><a href="#">123</a></li>
-                                        <li><a href="#">123</a></li>
-                                        <li><a href="#">123</a></li>
-                                        <li><a href="#">13</a></li>
-                                    </ul>
-                                </div>
-							</div>
-							
-                            <% end %>
-                            
-						</div>
+						<%#= render(:partial => "cart" , :object => @cart) %>
+						<%= render :partial => "layouts/menu" %>
 					</div>
                     
 					<div class="right">
