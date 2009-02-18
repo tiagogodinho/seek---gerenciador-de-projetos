@@ -1,4 +1,7 @@
 class PessoasController < ApplicationController
+  layout "principal"
+  before_filter :create_menu
+  
   # GET /pessoas
   # GET /pessoas.xml
   def index
@@ -81,5 +84,9 @@ class PessoasController < ApplicationController
       format.html { redirect_to(pessoas_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def create_menu
+  	@projetos = Projeto.find(:all)
   end
 end
