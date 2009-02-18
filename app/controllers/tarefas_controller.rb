@@ -1,4 +1,7 @@
 class TarefasController < ApplicationController
+  layout "principal"
+  before_filter :create_menu
+  
   # GET /tarefas
   # GET /tarefas.xml
   def index
@@ -81,5 +84,9 @@ class TarefasController < ApplicationController
       format.html { redirect_to(tarefas_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def create_menu
+  	@projetos = Projeto.find(:all)
   end
 end
