@@ -29,16 +29,7 @@ ActiveRecord::Schema.define(:version => 20090218162454) do
     t.datetime "updated_at"
   end
 
-  create_table "tarefas", :force => true do |t|
-    t.string   "Nome"
-    t.text     "Descricao"
-    t.date     "DtInicio"
-    t.date     "DtTermino"
-    t.integer  "Prioridade"
-    t.boolean  "Status"
-    t.integer  "Progresso"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "tarefas" because of following ActiveRecord::StatementInvalid
+#   Mysql::Error: Can't create/write to file 'C:\WINDOWS\TEMP\#sql_2b4_0.MYD' (Errcode: 13): describe `tarefas`
 
 end

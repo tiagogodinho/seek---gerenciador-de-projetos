@@ -8,6 +8,7 @@ class CreateTarefas < ActiveRecord::Migration
       t.integer :Prioridade
       t.boolean :Status
       t.integer :Progresso
+      t.references :projeto
 
       t.timestamps
     end
