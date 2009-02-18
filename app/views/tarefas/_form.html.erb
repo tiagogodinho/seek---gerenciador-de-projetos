@@ -1,4 +1,4 @@
-<% form_for(@tarefa) do |f| %>
+<% form_for([@projeto, @tarefa]) do |f| %>
 <%= f.error_messages %>
 <ul class="orcamento">
 	<li>
@@ -11,7 +11,7 @@
 		Descrição
 	</li> 
 	<li>
-		<%= f.text_area :Descricao, :class => "txt" %>
+		<%= f.text_area :Descricao %>
 	</li>
 	<li>
 		Data de Início

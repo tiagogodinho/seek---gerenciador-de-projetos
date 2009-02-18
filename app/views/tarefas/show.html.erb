@@ -33,6 +33,5 @@
   <%=h @tarefa.Progresso %>
 </p>
 
-
-<%= link_to 'Editar', edit_tarefa_path(@tarefa) %> |
-<%= link_to 'Voltar', tarefas_path %>
+<%= link_to 'Editar', edit_projeto_tarefa_path(@projeto, @tarefa) %> |
+<%= link_to 'Voltar', projeto_tarefas_path(@projeto) %>

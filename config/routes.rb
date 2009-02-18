@@ -1,9 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :tarefas
 
   map.resources :pessoas
-
-  map.resources :projetos
+  map.resources :projetos, :has_many => :tarefas
 
   # The priority is based upon order of creation: first created -> highest priority.
 
