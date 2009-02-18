@@ -4,8 +4,8 @@
   <tr>
     <th>Nome</th>
     <th>Descricao</th>
-    <th>Dtinicio</th>
-    <th>Dttermino</th>
+    <th>Data de Início</th>
+    <th>Data de Término</th>
     <th>Prioridade</th>
     <th>Status</th>
     <th>Progresso</th>
@@ -20,13 +20,13 @@
     <td><%=h tarefa.Prioridade %></td>
     <td><%=h tarefa.Status %></td>
     <td><%=h tarefa.Progresso %></td>
-    <td><%= link_to 'Show', tarefa %></td>
-    <td><%= link_to 'Edit', edit_tarefa_path(tarefa) %></td>
-    <td><%= link_to 'Destroy', tarefa, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Mostar', tarefa %></td>
+    <td><%= link_to 'Editar', edit_tarefa_path(tarefa) %></td>
+    <td><%= link_to 'Apagar', tarefa, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New tarefa', new_tarefa_path %>
+<%= link_to 'Nova tarefa', new_tarefa_path %>

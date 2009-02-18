@@ -1,0 +1,50 @@
+<% form_for(@tarefa) do |f| %>
+<%= f.error_messages %>
+<ul class="orcamento">
+	<li>
+		Nome
+	</li>
+	<li>
+		<%= f.text_field :Nome, :class => "txt" %>
+	</li>
+	<li>
+		Descrição
+	</li> 
+	<li>
+		<%= f.text_area :Descricao, :class => "txt" %>
+	</li>
+	<li>
+		Data de Início
+	</li> 
+	<li>
+		<%= f.text_field :DtInicio, :class => "txt" %>
+	</li>
+	<li>
+		Data de Término
+	</li> 
+	<li>
+		<%= f.text_field :DtTermino, :class => "txt" %>
+	</li>
+	<li>
+		Prioridade
+	</li>
+	<li>
+		<%= f.text_field :Prioridade, :class => "txt" %>
+	</li>
+	<li>
+		Status
+	</li>
+	<li>
+		<%= f.check_box :Status%>
+	</li>
+	<li>
+		Progresso
+	</li>
+	<li>
+		<%= f.text_field :Progresso, :class => "txt" %>
+	</li>
+	<li>
+		<%= f.submit "SALVAR", :class => "sub" %>
+	</li>
+</ul>
+<% end %>
