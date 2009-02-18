@@ -1,0 +1,28 @@
+<h1>Editing pessoa</h1>
+
+<% form_for(@pessoa) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :Nome %><br />
+    <%= f.text_field :Nome %>
+  </p>
+  <p>
+    <%= f.label :Email %><br />
+    <%= f.text_field :Email %>
+  </p>
+  <p>
+    <%= f.label :Senha %><br />
+    <%= f.text_field :Senha %>
+  </p>
+  <p>
+    <%= f.label :UltimoAcesso %><br />
+    <%= f.datetime_select :UltimoAcesso %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @pessoa %> |
+<%= link_to 'Back', pessoas_path %>
