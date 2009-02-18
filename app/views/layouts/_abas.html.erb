@@ -1,0 +1,17 @@
+<% if @id.nil? %>
+<h1>
+	<div id="lr"></div>
+	<div id="rr"></div>
+</h1>
+<% else %>
+<h1>
+	<div id="lr"></div>
+	<ul>
+		<!--<li id="sel">-->
+		<li>
+			<%= link_to 'Tarefas', projeto_tarefas_path(@projeto) %>
+		</li>
+	</ul>
+	<div id="rr"></div>
+</h1>
+<% end %>

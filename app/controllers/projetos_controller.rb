@@ -88,5 +88,6 @@ class ProjetosController < ApplicationController
   
   def create_menu
   	@projetos = Projeto.find(:all)
+  	@id = params[:id]
   end
 end

@@ -10,7 +10,7 @@
 	</h1>
 	<% for projeto in @projetos %>
 	<div class="projetos">
-	<% if params[:id] == projeto.id.to_s %>
+	<% if @id == projeto.id.to_s %>
 		<h2 class="sel">
 	<% else %>		
 		<h2 class="unsel">

@@ -35,30 +35,23 @@
 				</div>
                 
 				<div class="meio">
-                
+					
 					<div class="left">
-						<%#= render(:partial => "cart" , :object => @cart) %>
 						<%= render :partial => "layouts/menu" %>
 					</div>
                     
 					<div class="right">
 						<div id="conteudo">
-                        	<!--
-                            <h1>
-                            	<div id="lr"></div>
-                            	<ul>
-                            		<li id="sel"><a href="#">aba</a></li>
-                            		<li><a href="#">aba</a></li>
-                            	</ul>
-                            	<div id="rr"></div>
-                            </h1>
-                            -->
+							<%= render :partial => "layouts/abas" %>
 							<div class="box">
 								<%= yield  %>
 							</div>
+							
 						</div>
 					</div>
+					
 				</div>
+				
 			</div>
 		</div>
 	</body>

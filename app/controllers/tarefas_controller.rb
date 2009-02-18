@@ -89,5 +89,6 @@ class TarefasController < ApplicationController
   def create_menu
   	@projetos = Projeto.find(:all)
   	@projeto = Projeto.find(params[:projeto_id])
+  	@id = params[:projeto_id]
   end
 end
