@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Nome: MyString
+  Descricao: MyText
+  DtInicio: 2009-02-18
+  DtTermino: 2009-02-18
+  Prioridade: 1
+  Status: false
+  Progresso: 1
+
+two:
+  Nome: MyString
+  Descricao: MyText
+  DtInicio: 2009-02-18
+  DtTermino: 2009-02-18
+  Prioridade: 1
+  Status: false
+  Progresso: 1

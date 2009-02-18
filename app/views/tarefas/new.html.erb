@@ -1,0 +1,39 @@
+<h1>New tarefa</h1>
+
+<% form_for(@tarefa) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :Nome %><br />
+    <%= f.text_field :Nome %>
+  </p>
+  <p>
+    <%= f.label :Descricao %><br />
+    <%= f.text_area :Descricao %>
+  </p>
+  <p>
+    <%= f.label :DtInicio %><br />
+    <%= f.date_select :DtInicio %>
+  </p>
+  <p>
+    <%= f.label :DtTermino %><br />
+    <%= f.date_select :DtTermino %>
+  </p>
+  <p>
+    <%= f.label :Prioridade %><br />
+    <%= f.text_field :Prioridade %>
+  </p>
+  <p>
+    <%= f.label :Status %><br />
+    <%= f.check_box :Status %>
+  </p>
+  <p>
+    <%= f.label :Progresso %><br />
+    <%= f.text_field :Progresso %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', tarefas_path %>
