@@ -1,15 +1,16 @@
 class TarefasController < ApplicationController
+
   layout "principal"
   before_filter :create_menu
-  
+
   # GET /tarefas
   # GET /tarefas.xml
   def index
-    @tarefas = Tarefa.find(:all)
-
+    @tarefas = @projeto.tarefas
+    
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tarefas }
+        format.html # index.html.erb
+        format.xml  { render :xml => @tarefas }
     end
   end
 
@@ -27,24 +28,25 @@ class TarefasController < ApplicationController
   # GET /tarefas/new
   # GET /tarefas/new.xml
   def new
-    @tarefa = Tarefa.new
+	@tarefa = Tarefa.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @tarefa }
-    end
+	respond_to do |format|
+	  format.html # new.html.erb
+	  format.xml  { render :xml => @tarefa }
+	end
   end
 
   # GET /tarefas/1/edit
   def edit
-    @tarefa = Tarefa.find(params[:id])
+	@tarefa = Tarefa.find(params[:id])
   end
 
   # POST /tarefas
   # POST /tarefas.xml
   def create
     @tarefa = Tarefa.new(params[:tarefa])
-
+    @tarefa.projeto_id = @projeto.id
+      
     respond_to do |format|
       if @tarefa.save
         flash[:notice] = 'Tarefa was successfully created.'
@@ -60,35 +62,36 @@ class TarefasController < ApplicationController
   # PUT /tarefas/1
   # PUT /tarefas/1.xml
   def update
-    @tarefa = Tarefa.find(params[:id])
+	@tarefa = Tarefa.find(params[:id])
 
-    respond_to do |format|
-      if @tarefa.update_attributes(params[:tarefa])
-        flash[:notice] = 'Tarefa was successfully updated.'
-        format.html { redirect_to(@tarefa) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @tarefa.errors, :status => :unprocessable_entity }
-      end
-    end
+	respond_to do |format|
+	  if @tarefa.update_attributes(params[:tarefa])
+		flash[:notice] = 'Tarefa was successfully updated.'
+		format.html { redirect_to(projeto_tarefa_path(@projeto, @tarefa)) }
+		format.xml  { head :ok }
+	  else
+		format.html { render :action => "edit" }
+		format.xml  { render :xml => @tarefa.errors, :status => :unprocessable_entity }
+	  end
+	end
   end
 
   # DELETE /tarefas/1
   # DELETE /tarefas/1.xml
   def destroy
-    @tarefa = Tarefa.find(params[:id])
-    @tarefa.destroy
+	@tarefa = Tarefa.find(params[:id])
+	@tarefa.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(tarefas_url) }
-      format.xml  { head :ok }
-    end
+	respond_to do |format|
+	  format.html { redirect_to(projeto_tarefas_path(@projeto)) }
+	  format.xml  { head :ok }
+	end
   end
   
   def create_menu
-  	@projetos = Projeto.find(:all)
-  	@projeto = Projeto.find(params[:projeto_id])
-  	@id = params[:projeto_id]
+	@projetos = Projeto.find(:all)
+	@projeto = Projeto.find(params[:projeto_id])
+	@id = params[:projeto_id]
   end
+
 end

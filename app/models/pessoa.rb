@@ -1,3 +1,4 @@
 class Pessoa < ActiveRecord::Base
-  has_and_belongs_to_many :projetos
+	has_many :pessoasprojetos
+	has_many :projetos, :through => :pessoasprojetos
 end
