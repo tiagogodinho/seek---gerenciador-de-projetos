@@ -5,13 +5,17 @@ class PessoasController < ApplicationController
   # GET /pessoas
   # GET /pessoas.xml
   def index
-    @pessoas = Pessoa.find(:all)
+    if @projeto.nil?
+      @pessoas = Pessoa.find(:all)
+    else
+      @pessoas = @projeto.pessoas
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pessoas }
     end
-  end
+end
 
   # GET /pessoas/1
   # GET /pessoas/1.xml
@@ -87,6 +91,13 @@ class PessoasController < ApplicationController
   end
   
   def create_menu
-  	@projetos = Projeto.find(:all)
+  	begin
+      @projeto = Projeto.find(params[:projeto_id])
+    rescue ActiveRecord::RecordNotFound
+      @projeto = nil
+    end
+    
+    @projetos = Projeto.find(:all)
+    @id = params[:projeto_id]
   end
 end

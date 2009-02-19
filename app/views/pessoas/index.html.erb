@@ -1,4 +1,4 @@
-<h1>Lista de Pessoas</h1>
+<h3>Lista de Pessoas</h3>
 
 <table>
   <tr>
@@ -10,13 +10,35 @@
   <tr>
     <td><%=h pessoa.Nome %></td>
     <td><%=h pessoa.Email %></td>
-    <td><%= link_to 'Mostrar', pessoa %></td>
-    <td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
-    <td><%= link_to 'Apagar', pessoa, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+    <% if @projeto.nil? %>
+		<%= link_to 'Mostrar', pessoa %>
+	<% else %>
+		<%= link_to 'Mostrar', projeto_pessoa_path(@projeto, pessoa) %>
+	<% end %>
+	</td>
+    <td>
+    <% if @projeto.nil? %>
+		<%= link_to 'Editar', edit_pessoa_path(pessoa) %>
+	<% else %>
+		<%= link_to 'Editar', edit_projeto_pessoa_path(@projeto, pessoa) %>
+	<% end %>
+	</td>
+    <td>
+    <% if @projeto.nil? %>
+		<%= link_to 'Apagar', pessoa, :confirm => 'Are you sure?', :method => :delete %>
+	<% else %>
+		<%= link_to 'Apagar', projeto_pessoa_path(@projeto, pessoa), :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	</td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
+<% if @projeto.nil? %>
 <%= link_to 'Nova pessoa', new_pessoa_path %>
+<% else %>
+<%= link_to 'Nova pessoa', new_projeto_pessoa_path %>
+<% end %>

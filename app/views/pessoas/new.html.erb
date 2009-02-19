@@ -1,5 +1,9 @@
-<h1>Nova Pessoa</h1>
+<h3>Nova Pessoa</h3>
 
 <%= render :partial => "form" %>
 
+<% if @projeto.nil? %>
 <%= link_to 'Voltar', pessoas_path %>
+<% else %>
+<%= link_to 'Voltar', projeto_pessoas_path %>
+<% end %>
