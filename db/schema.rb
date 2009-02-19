@@ -9,13 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090218162454) do
+ActiveRecord::Schema.define(:version => 20090219132618) do
 
   create_table "pessoas", :force => true do |t|
     t.string   "Nome"
     t.string   "Email"
     t.string   "Senha"
     t.datetime "UltimoAcesso"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pessoas_projetos", :force => true do |t|
+    t.integer  "pessoa_id"
+    t.integer  "projeto_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,7 +36,17 @@ ActiveRecord::Schema.define(:version => 20090218162454) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "tarefas" because of following ActiveRecord::StatementInvalid
-#   Mysql::Error: Can't create/write to file 'C:\WINDOWS\TEMP\#sql_2b4_0.MYD' (Errcode: 13): describe `tarefas`
+  create_table "tarefas", :force => true do |t|
+    t.string   "Nome"
+    t.text     "Descricao"
+    t.date     "DtInicio"
+    t.date     "DtTermino"
+    t.integer  "Prioridade"
+    t.boolean  "Status"
+    t.integer  "Progresso"
+    t.integer  "projeto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
