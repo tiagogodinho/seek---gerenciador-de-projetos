@@ -5,7 +5,10 @@ class PessoasController < ApplicationController
   # GET /pessoas
   # GET /pessoas.xml
   def index
-    if @projeto.nil?
+  	@pessoas = Pessoa.find(:all)
+  	#@projeto = Projeto.find(:id_pessoa)
+  	
+	if @projeto.nil?
       @pessoas = Pessoa.find(:all)
     else
       @pessoas = @projeto.pessoas

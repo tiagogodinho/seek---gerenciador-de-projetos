@@ -1,4 +1,4 @@
 class Pessoa < ActiveRecord::Base
-	has_many :pessoasprojetos
-	has_many :projetos, :through => :pessoasprojetos
+	has_many :participantes
+	has_many :projetos, :through => :participantes
 end
