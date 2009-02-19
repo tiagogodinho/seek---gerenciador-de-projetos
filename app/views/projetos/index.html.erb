@@ -1,22 +1,29 @@
-<h1>Lista de Projetos</h1>
-
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Data de Início</th>
-    <th>Data de Término</th>
-    <th>Orçamento</th>
-  </tr>
-
 <% for projeto in @projetos %>
-  <tr>
-    <td><%=h projeto.Nome %></td>
-    <td><%=h projeto.DtInicio %></td>
-    <td><%=h projeto.DtTermino %></td>
-    <td><%=h projeto.Orcamento %></td>
-    <td><%= link_to 'Mostrar', projeto %></td>
-    <td><%= link_to 'Editar', edit_projeto_path(projeto) %></td>
-    <td><%= link_to 'Apagar', projeto, :confirm => 'Deseja mesmo excluir o projeto ?', :method => :delete %></td>
-  </tr>
+
+<h3><%= projeto.Nome %></h3>
+<ul class="tarefas">
+	
+<% date = nil %>
+	
+<% for tarefa in projeto.tarefas.all(:order => "created_at desc") %>
+	
+	<% if tarefa.created_at.strftime("%A, %d de %B de %Y") != date %>
+	
+	<% date = tarefa.created_at.strftime("%A, %d de %B de %Y") %>
+	
+	<li>
+		<span id="date"><%= date %></span>
+	</li>
+	
+	<% end %>
+	
+	<li id="item">
+		<span id="comment">Tarefa</span>
+		<span id="ctr"><%= tarefa.Nome %></span>
+		<span id="sign">por Tiago</span>
+	</li>
+	
+<% end #for %>
+
+</ul>
 <% end %>
-</table>

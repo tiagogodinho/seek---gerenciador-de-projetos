@@ -48,7 +48,7 @@ class TarefasController < ApplicationController
     respond_to do |format|
       if @tarefa.save
         flash[:notice] = 'Tarefa was successfully created.'
-        format.html { redirect_to(@tarefa) }
+        format.html { redirect_to(projeto_tarefa_path(@projeto, @tarefa)) }
         format.xml  { render :xml => @tarefa, :status => :created, :location => @tarefa }
       else
         format.html { render :action => "new" }
