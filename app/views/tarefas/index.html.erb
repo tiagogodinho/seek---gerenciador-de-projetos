@@ -19,35 +19,5 @@
 <% end %>
 
 </ul>
-<!--
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Descricao</th>
-    <th>Data de Início</th>
-    <th>Data de Término</th>
-    <th>Prioridade</th>
-    <th>Status</th>
-    <th>Progresso</th>
-  </tr>
 
-<% for tarefa in @tarefas %>
-  <tr>
-    <td><%=h tarefa.Nome %></td>
-    <td><%=h tarefa.Descricao %></td>
-    <td><%=h tarefa.DtInicio %></td>
-    <td><%=h tarefa.DtTermino %></td>
-    <td><%=h tarefa.Prioridade %></td>
-    <td><%=h tarefa.Status %></td>
-    <td><%=h tarefa.Progresso %></td>
-    <td><%= link_to 'Mostar', projeto_tarefa_path(@projeto, tarefa) %></td>
-    <td><%= link_to 'Editar', edit_projeto_tarefa_path(@projeto, tarefa) %></td>
-    <td><%= link_to 'Apagar', projeto_tarefa_path(@projeto, tarefa), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
--->
 <%= link_to 'Nova tarefa', new_projeto_tarefa_path(@projeto) %>
