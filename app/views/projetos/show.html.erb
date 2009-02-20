@@ -17,7 +17,7 @@
 	
 	<li id="item">
 		<span id="comment">Tarefa</span>
-		<span id="ctr"><%= tarefa.Nome %></span>
+		<span id="ctr"><%= link_to tarefa.Nome, projeto_tarefa_path(@projeto, tarefa) %></span>
 		<span id="sign"></span>
 	</li>
 	

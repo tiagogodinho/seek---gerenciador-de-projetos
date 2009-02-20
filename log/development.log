@@ -1,0 +1,321 @@
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2009-02-20 12:23:07) [GET]
+  Parameters: {"projeto_id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mPessoa Load (0.0ms)[0m   [0mSELECT * FROM `pessoas` [0m
+Rendering template within layouts/principal
+Rendering pessoas/index
+  [4;36;1mPessoa Load (0.0ms)[0m   [0;1mSELECT `pessoas`.* FROM `pessoas` INNER JOIN participantes ON pessoas.id = participantes.pessoa_id WHERE ((`participantes`.projeto_id = 1)) [0m
+  [4;35;1mPessoa Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `pessoas`[0m
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 235ms (View: 94, DB: 16) | 200 OK [http://localhost/projetos/1/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2009-02-20 12:23:14) [GET]
+  Parameters: {"id"=>"18", "projeto_id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mPessoa Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `pessoas`[0m
+  [4;36;1mPessoa Load (0.0ms)[0m   [0;1mSELECT * FROM `pessoas` WHERE (`pessoas`.`id` = 18) [0m
+Rendering template within layouts/principal
+Rendering pessoas/show
+Rendered layouts/_menu (16.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 390ms (View: 296, DB: 16) | 200 OK [http://localhost/projetos/1/pessoas/18]
+
+
+Processing PessoasController#edit (for 127.0.0.1 at 2009-02-20 12:23:19) [GET]
+  Parameters: {"id"=>"18", "projeto_id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mPessoa Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pessoas`[0m
+  [4;35;1mPessoa Load (15.0ms)[0m   [0mSELECT * FROM `pessoas` WHERE (`pessoas`.`id` = 18) [0m
+Rendering template within layouts/principal
+Rendering pessoas/edit
+Rendered pessoas/_form (15.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 172ms (View: 94, DB: 30) | 200 OK [http://localhost/projetos/1/pessoas/18/edit]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2009-02-20 12:23:24) [GET]
+  Parameters: {"projeto_id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mPessoa Load (0.0ms)[0m   [0mSELECT * FROM `pessoas` [0m
+Rendering template within layouts/principal
+Rendering pessoas/index
+  [4;36;1mPessoa Load (0.0ms)[0m   [0;1mSELECT `pessoas`.* FROM `pessoas` INNER JOIN participantes ON pessoas.id = participantes.pessoa_id WHERE ((`participantes`.projeto_id = 1)) [0m
+  [4;35;1mPessoa Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `pessoas`[0m
+Rendered layouts/_menu (31.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 204ms (View: 95, DB: 15) | 200 OK [http://localhost/projetos/1/pessoas]
+
+
+Processing ProjetosController#edit (for 127.0.0.1 at 2009-02-20 12:23:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+Rendering template within layouts/principal
+Rendering projetos/edit
+Rendered projetos/_form (32.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (31.0ms)
+Completed in 328ms (View: 141, DB: 0) | 200 OK [http://localhost/projetos/1/edit]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2009-02-20 12:23:30) [GET]
+  Parameters: {"projeto_id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mPessoa Load (0.0ms)[0m   [0;1mSELECT * FROM `pessoas` [0m
+Rendering template within layouts/principal
+Rendering pessoas/index
+  [4;35;1mPessoa Load (0.0ms)[0m   [0mSELECT `pessoas`.* FROM `pessoas` INNER JOIN participantes ON pessoas.id = participantes.pessoa_id WHERE ((`participantes`.projeto_id = 1)) [0m
+  [4;36;1mPessoa Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pessoas`[0m
+Rendered layouts/_menu (16.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 172ms (View: 78, DB: 0) | 200 OK [http://localhost/projetos/1/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2009-02-20 12:23:33) [GET]
+  Parameters: {"id"=>"18", "projeto_id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mPessoa Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `pessoas`[0m
+  [4;35;1mPessoa Load (0.0ms)[0m   [0mSELECT * FROM `pessoas` WHERE (`pessoas`.`id` = 18) [0m
+Rendering template within layouts/principal
+Rendering pessoas/show
+Rendered layouts/_menu (47.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 515ms (View: 187, DB: 0) | 200 OK [http://localhost/projetos/1/pessoas/18]
+
+
+Processing TarefasController#index (for 127.0.0.1 at 2009-02-20 12:23:37) [GET]
+  Parameters: {"projeto_id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+Rendering template within layouts/principal
+Rendering tarefas/index
+  [4;35;1mTarefa Load (0.0ms)[0m   [0mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) [0m
+  [4;36;1mTarefa Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `tarefas`[0m
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (15.0ms)
+Completed in 453ms (View: 390, DB: 0) | 200 OK [http://localhost/projetos/1/tarefas]
+
+
+Processing ProjetosController#show (for 127.0.0.1 at 2009-02-20 12:23:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mProjeto Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+Rendering template within layouts/principal
+Rendering projetos/show
+  [4;36;1mTarefa Load (0.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) ORDER BY created_at desc[0m
+  [4;35;1mTarefa Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `tarefas`[0m
+Rendered layouts/_menu (16.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 297ms (View: 234, DB: 32) | 200 OK [http://localhost/projetos/1]
+
+
+Processing ProjetosController#new (for 127.0.0.1 at 2009-02-20 12:24:24) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+Rendering template within layouts/principal
+Rendering projetos/new
+Rendered projetos/_form (0.0ms)
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 125ms (View: 94, DB: 0) | 200 OK [http://localhost/projetos/new]
+
+
+Processing ProjetosController#index (for 127.0.0.1 at 2009-02-20 12:24:28) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+Rendering template within layouts/principal
+Rendering projetos/index
+  [4;36;1mProjeto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mTarefa Load (0.0ms)[0m   [0mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) ORDER BY created_at desc[0m
+  [4;36;1mTarefa Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `tarefas`[0m
+  [4;35;1mTarefa Load (0.0ms)[0m   [0mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 3) ORDER BY created_at desc[0m
+Rendered layouts/_menu (15.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 203ms (View: 109, DB: 16) | 200 OK [http://localhost/projetos]
+
+
+Processing ProjetosController#index (for 127.0.0.1 at 2009-02-20 12:26:41) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+Rendering template within layouts/principal
+Rendering projetos/index
+  [4;36;1mProjeto Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mTarefa Load (0.0ms)[0m   [0mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) ORDER BY created_at desc[0m
+  [4;36;1mTarefa Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `tarefas`[0m
+  [4;35;1mTarefa Load (0.0ms)[0m   [0mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 3) ORDER BY created_at desc[0m
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 172ms (View: 111, DB: 30) | 200 OK [http://localhost/projetos]
+
+
+Processing TarefasController#show (for 127.0.0.1 at 2009-02-20 12:26:49) [GET]
+  Parameters: {"id"=>"4", "projeto_id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;35;1mTarefa Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `tarefas`[0m
+  [4;36;1mTarefa Load (0.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.`id` = 4) [0m
+Rendering template within layouts/principal
+Rendering tarefas/show
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 484ms (View: 94, DB: 0) | 200 OK [http://localhost/projetos/1/tarefas/4]
+
+
+Processing ProjetosController#index (for 127.0.0.1 at 2009-02-20 12:27:17) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+Rendering template within layouts/principal
+Rendering projetos/index
+  [4;35;1mProjeto Columns (31.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mTarefa Load (0.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) ORDER BY created_at desc[0m
+  [4;35;1mTarefa Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `tarefas`[0m
+  [4;36;1mTarefa Load (0.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 3) ORDER BY created_at desc[0m
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 172ms (View: 110, DB: 31) | 200 OK [http://localhost/projetos]
+
+
+Processing ProjetosController#show (for 127.0.0.1 at 2009-02-20 13:00:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mProjeto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (15.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+Rendering template within layouts/principal
+Rendering projetos/show
+  [4;36;1mTarefa Load (16.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) ORDER BY created_at desc[0m
+  [4;35;1mTarefa Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `tarefas`[0m
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 297ms (View: 156, DB: 31) | 200 OK [http://localhost/projetos/1]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2009-02-20 13:00:34) [GET]
+  Parameters: {"projeto_id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (16.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;36;1mProjeto Load (16.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mPessoa Load (0.0ms)[0m   [0mSELECT * FROM `pessoas` [0m
+Rendering template within layouts/principal
+Rendering pessoas/index
+  [4;36;1mPessoa Load (0.0ms)[0m   [0;1mSELECT `pessoas`.* FROM `pessoas` INNER JOIN participantes ON pessoas.id = participantes.pessoa_id WHERE ((`participantes`.projeto_id = 1)) [0m
+  [4;35;1mPessoa Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `pessoas`[0m
+Rendered layouts/_menu (32.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 641ms (View: 142, DB: 47) | 200 OK [http://localhost/projetos/1/pessoas]
+
+
+Processing ProjetosController#show (for 127.0.0.1 at 2009-02-20 13:23:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+Rendering template within layouts/principal
+Rendering projetos/show
+  [4;35;1mTarefa Load (0.0ms)[0m   [0mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) ORDER BY created_at desc[0m
+  [4;36;1mTarefa Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `tarefas`[0m
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 172ms (View: 125, DB: 15) | 200 OK [http://localhost/projetos/1]
+
+
+Processing ProjetosController#index (for 127.0.0.1 at 2009-02-20 13:23:06) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+Rendering template within layouts/principal
+Rendering projetos/index
+  [4;35;1mProjeto Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mTarefa Load (0.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) ORDER BY created_at desc[0m
+  [4;35;1mTarefa Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `tarefas`[0m
+  [4;36;1mTarefa Load (0.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 3) ORDER BY created_at desc[0m
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 641ms (View: 110, DB: 31) | 200 OK [http://localhost/projetos]
+
+
+Processing ProjetosController#show (for 127.0.0.1 at 2009-02-20 13:23:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` [0m
+  [4;36;1mProjeto Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `projetos`[0m
+  [4;35;1mProjeto Load (0.0ms)[0m   [0mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+Rendering template within layouts/principal
+Rendering projetos/show
+  [4;36;1mTarefa Load (0.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.projeto_id = 1) ORDER BY created_at desc[0m
+  [4;35;1mTarefa Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `tarefas`[0m
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (0.0ms)
+Completed in 172ms (View: 125, DB: 0) | 200 OK [http://localhost/projetos/1]
+
+
+Processing TarefasController#show (for 127.0.0.1 at 2009-02-20 13:23:15) [GET]
+  Parameters: {"id"=>"3", "projeto_id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` [0m
+  [4;35;1mProjeto Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `projetos`[0m
+  [4;36;1mProjeto Load (0.0ms)[0m   [0;1mSELECT * FROM `projetos` WHERE (`projetos`.`id` = 1) [0m
+  [4;35;1mTarefa Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `tarefas`[0m
+  [4;36;1mTarefa Load (0.0ms)[0m   [0;1mSELECT * FROM `tarefas` WHERE (`tarefas`.`id` = 3) [0m
+Rendering template within layouts/principal
+Rendering tarefas/show
+Rendered layouts/_menu (0.0ms)
+Rendered layouts/_abas (16.0ms)
+Completed in 219ms (View: 94, DB: 0) | 200 OK [http://localhost/projetos/1/tarefas/3]
