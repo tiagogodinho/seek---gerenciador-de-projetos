@@ -15,7 +15,13 @@
 <% end %>
 
 <% if @projeto.nil? %>
-<%= link_to 'Voltar', pessoas_path %>
+<%= link_to 'Voltar', pessoas_path %> |
 <% else %>
-<%= link_to 'Voltar', projeto_pessoas_path %>
+<%= link_to 'Voltar', projeto_pessoas_path %> |
+<% end %>
+
+<% if @projeto.nil? %>
+<%= link_to 'Apagar', @pessoa, :confirm => 'Are you sure?', :method => :delete %>
+<% else %>
+<%= link_to 'Apagar', projeto_pessoa_path(@projeto, @pessoa), :confirm => 'Are you sure?', :method => :delete %>
 <% end %>

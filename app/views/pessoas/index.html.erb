@@ -8,29 +8,14 @@
 
 <% for pessoa in @pessoas %>
   <tr>
-    <td><%=h pessoa.Nome %></td>
+  	<td>
+	<% if @projeto.nil? %>
+		<%= link_to pessoa.Nome, pessoa %>
+	<% else %>
+		<%= link_to pessoa.Nome, projeto_pessoa_path(@projeto, pessoa) %>
+	<% end %>
+	</td>
     <td><%=h pessoa.Email %></td>
-    <td>
-    <% if @projeto.nil? %>
-		<%= link_to 'Mostrar', pessoa %>
-	<% else %>
-		<%= link_to 'Mostrar', projeto_pessoa_path(@projeto, pessoa) %>
-	<% end %>
-	</td>
-    <td>
-    <% if @projeto.nil? %>
-		<%= link_to 'Editar', edit_pessoa_path(pessoa) %>
-	<% else %>
-		<%= link_to 'Editar', edit_projeto_pessoa_path(@projeto, pessoa) %>
-	<% end %>
-	</td>
-    <td>
-    <% if @projeto.nil? %>
-		<%= link_to 'Apagar', pessoa, :confirm => 'Are you sure?', :method => :delete %>
-	<% else %>
-		<%= link_to 'Apagar', projeto_pessoa_path(@projeto, pessoa), :confirm => 'Are you sure?', :method => :delete %>
-	<% end %>
-	</td>
   </tr>
 <% end %>
 </table>
