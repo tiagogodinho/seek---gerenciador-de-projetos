@@ -34,4 +34,5 @@
 </p>
 
 <%= link_to 'Editar', edit_projeto_tarefa_path(@projeto, @tarefa) %> |
-<%= link_to 'Voltar', projeto_tarefas_path(@projeto) %>
+<%= link_to 'Voltar', projeto_tarefas_path(@projeto) %> |
+<%= link_to 'Apagar', projeto_tarefa_path(@projeto, @tarefa), :confirm => 'Are you sure?', :method => :delete %>

@@ -1,5 +1,25 @@
-<h3>Listing tarefas</h3>
+<h3>Lista de tarefas</h3>
 
+<ul class="tarefas">
+	
+<% date = nil %>
+	
+<% for tarefa in @tarefas %>
+	
+	<li id="item">
+	<% if tarefa.DtTermino.nil? %>
+		<span id="message">Indefinida</span>
+	<% else %>
+		<span id="message"><%= tarefa.DtTermino.strftime("%d/%m/%Y") %></span>
+	<% end %>
+		<span id="ctr"><%= link_to tarefa.Nome, projeto_tarefa_path(@projeto, tarefa) %></span>
+		<span id="sign"></span>
+	</li>
+	
+<% end %>
+
+</ul>
+<!--
 <table>
   <tr>
     <th>Nome</th>
@@ -29,4 +49,5 @@
 
 <br />
 
+-->
 <%= link_to 'Nova tarefa', new_projeto_tarefa_path(@projeto) %>

@@ -6,7 +6,8 @@ class TarefasController < ApplicationController
   # GET /tarefas
   # GET /tarefas.xml
   def index
-    @tarefas = @projeto.tarefas
+  	@tarefas = @projeto.tarefas
+    #@tarefas = @projeto.tarefas.all(:order => "DtTermino desc")
     
     respond_to do |format|
         format.html # index.html.erb
@@ -50,7 +51,7 @@ class TarefasController < ApplicationController
     respond_to do |format|
       if @tarefa.save
         flash[:notice] = 'Tarefa was successfully created.'
-        format.html { redirect_to(projeto_tarefa_path(@projeto, @tarefa)) }
+        format.html { redirect_to(projeto_tarefas_path(@projeto)) }
         format.xml  { render :xml => @tarefa, :status => :created, :location => @tarefa }
       else
         format.html { render :action => "new" }
