@@ -2,6 +2,5 @@
 
 <%= render :partial => "form" %>
 
-<%= link_to 'Mostrar', @projeto %> |
-<%= link_to 'Voltar', projetos_path %> |
+<%= link_to 'Voltar', @projeto %> |
 <%= link_to 'Apagar projeto', projeto_path(@projeto), :confirm => 'Tem certeza que deseja apagar o projeto ?', :method => :delete %>
