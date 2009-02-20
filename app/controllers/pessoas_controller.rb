@@ -6,7 +6,6 @@ class PessoasController < ApplicationController
   # GET /pessoas.xml
   def index
   	@pessoas = Pessoa.find(:all)
-  	#@projeto = Projeto.find(:id_pessoa)
   	
 	if @projeto.nil?
       @pessoas = Pessoa.find(:all)
@@ -51,12 +50,23 @@ end
   # POST /pessoas.xml
   def create
     @pessoa = Pessoa.new(params[:pessoa])
-
     respond_to do |format|
       if @pessoa.save
-        flash[:notice] = 'Pessoa was successfully created.'
-        format.html { redirect_to(@pessoa) }
-        format.xml  { render :xml => @pessoa, :status => :created, :location => @pessoa }
+        if !@projeto.nil?
+          @participante = Participante.new
+          @participante.pessoa_id = @pessoa.id
+          @participante.projeto_id = @projeto.id
+          if @participante.save
+            flash[:notice] = 'Pessoa was successfully created.'
+            #format.html { redirect_to(@pessoa) }
+            format.html { redirect_to(projeto_pessoas_path(@projeto)) }
+            format.xml  { render :xml => @pessoa, :status => :created, :location => @pessoa }
+          end
+        else
+          flash[:notice] = 'Pessoa was successfully created.'
+          format.html { redirect_to(@pessoa) }
+          format.xml  { render :xml => @pessoa, :status => :created, :location => @pessoa }
+        end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @pessoa.errors, :status => :unprocessable_entity }
