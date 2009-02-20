@@ -82,7 +82,11 @@ end
     respond_to do |format|
       if @pessoa.update_attributes(params[:pessoa])
         flash[:notice] = 'Pessoa was successfully updated.'
-        format.html { redirect_to(@pessoa) }
+        if @projeto.nil?
+          format.html { redirect_to(@pessoa) }
+        else
+          format.html { redirect_to(projeto_pessoa_path(@projeto, @pessoa)) }
+        end
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
