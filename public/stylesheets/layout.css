@@ -24,7 +24,7 @@ a:hover	{text-decoration:underline;}
 .menu a 	{color:#FFF	;}
 .menu li:hover	{background-color:#696969; cursor:pointer;}
 
-.menu ul#opt	{width:170px; float:right; font-size:11px;}
+.menu ul#opt	{width:auto; float:right; font-size:11px;}
 .menu li#sair	{background:url(/images/hovermenu.jpg);}
 .menu li#sair:hover	{background:#696969;}
 
