@@ -112,5 +112,6 @@ end
     
     @projetos = Projeto.find(:all)
     @id = params[:projeto_id]
+    @aba = "pessoas"
   end
 end

@@ -7,14 +7,32 @@
 <h1>
 	<div id="lr"></div>
 	<ul>
-		<!--<li id="sel">-->
+	<% if @aba == "projetos"%>
+		<li id="sel">
+	<% else %>
 		<li>
+	<% end %>
+			<%= link_to 'Últimas atualizações', projeto_path(@projeto) %>
+		</li>
+	<% if @aba == "tarefas"%>
+		<li id="sel">
+	<% else %>
+		<li>
+	<% end %>
 			<%= link_to 'Tarefas', projeto_tarefas_path(@projeto) %>
 		</li>
+	<% if @aba == "pessoas"%>
+		<li id="sel">
+	<% else %>
 		<li>
+	<% end %>
 			<%= link_to 'Pessoas', projeto_pessoas_path(@projeto) %>
 		</li>
+	<% if @aba == "configuracao"%>
+		<li id="sel">
+	<% else %>
 		<li>
+	<% end %>
 			<%= link_to 'Configurações do projeto', edit_projeto_path(@projeto) %>
 		</li>
 	</ul>
