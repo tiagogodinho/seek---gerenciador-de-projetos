@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-
+  map.home '', :controller => 'home', :action => 'index'
+  
   map.resources :pessoas
   map.resources :projetos, :has_many => [:tarefas, :pessoas]
 
