@@ -1,6 +1,6 @@
 class ProjetosController < ApplicationController
   layout "principal"
-  before_filter :create_menu
+  before_filter :create_menu, :login_required
 
   # GET /projetos
   # GET /projetos.xml

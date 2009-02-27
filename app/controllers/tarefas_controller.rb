@@ -1,7 +1,7 @@
 class TarefasController < ApplicationController
 
   layout "principal"
-  before_filter :create_menu
+  before_filter :create_menu, :login_required
 
   # GET /tarefas
   # GET /tarefas.xml
