@@ -35,17 +35,22 @@ end
   # GET /pessoas/new
   # GET /pessoas/new.xml
   def new
-    @pessoa = Pessoa.new
+    redirect_to '/404.html'
+    #@pessoa = Pessoa.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @pessoa }
-    end
+    #respond_to do |format|
+      #format.html # new.html.erb
+      #format.xml  { render :xml => @pessoa }
+    #end
   end
 
   # GET /pessoas/1/edit
   def edit
-    @pessoa = Pessoa.find(params[:id])
+    if request.post?
+      @pessoa = Pessoa.find(params[:id])
+    else
+      redirect_to '/404.html'
+    end
   end
 
   # POST /pessoas
