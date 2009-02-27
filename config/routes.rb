@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.home '', :controller => 'home', :action => 'index'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'login'
+  map.signup  '/signup', :controller => 'sessions',   :action => 'signup'
   
   map.resources :pessoas
   map.resources :projetos, :has_many => [:tarefas, :pessoas]
