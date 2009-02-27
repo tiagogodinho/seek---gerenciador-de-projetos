@@ -1,10 +1,7 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
   
-  def new
-  end
-
-  def create
+  def login
     logout_keeping_session!
     users = Pessoa.authenticate(params[:login], params[:password])
     if users
@@ -15,13 +12,13 @@ class SessionsController < ApplicationController
       self.current_users = users
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/projetos')
+      redirect_back_or_default('/pessoas')
       flash[:notice] = "Logged in successfully"
     else
       note_failed_signin
       @login       = params[:login]
       @remember_me = params[:remember_me]
-      render :action => 'new'
+      render :action => 'login'
     end
   end
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Seek - Gerenciador de Projetos</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/login.css"/>
+    <script type="text/javascript" src="/javascripts/jquery-1.3.1.min.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <div class="topo">
+        <div class="logo"><img src="/images/logo.jpg" /></div>
+        <div class="titulo">
+          GERENCIADOR DE PROJETOS
+        </div>
+      </div>
+      <% #form_tag session_path do %>
+      <% form_tag login_path do %>
+        <ul>
+          <li>
+            Login
+          </li>
+          <li>
+            <%= text_field_tag 'login', @login %>
+          </li>
+          <li>
+            Senha
+          </li>
+          <li>
+            <%= password_field_tag 'password', nil %>
+          </li>
+          <li>
+            <%= submit_tag 'Log in', :src => '/images/entrar.jpg', :type => 'image', :class => 'enviar' %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </body>
+</html>
+
+
+<%#= render :partial => "users" %>
+<!-->
+<h1>Log In</h1>
+
+
+<p><%= label_tag 'login' %><br />
+<%= text_field_tag 'login', @login %></p>
+
+<p><%= label_tag 'password' %><br/>
+<%= password_field_tag 'password', nil %></p>-->
+
+<!-- Uncomment this if you want this functionality
+<p><%= label_tag 'remember_me', 'Remember me' %>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+-->
+<!--
+<p><%= submit_tag 'Log in' %></p>
+<%# end -%>
+-->

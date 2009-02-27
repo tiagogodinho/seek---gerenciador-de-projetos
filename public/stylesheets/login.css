@@ -1,0 +1,18 @@
+body		{margin:0px; padding:0px; background:#3F7CA9; font-family:Trebuchet Ms; font-size:15px; color:#659AC1;}
+
+ul, li, form, span		{margin:0px; padding:0px; list-style-type:none;}
+
+.box		{width:500px; height:auto; float:left; background-color:#FFF; border:solid 10px #CCC; padding:10px; position:relative; left:50%; margin-left:-250px; margin-top:50px;}
+.topo		{width:100%; height:auto; float:left; margin-top:10px;}
+.logo		{width:49%; height:auto; float:left; border-right:solid 1px #CCC;}
+.logo img	{padding-left:55px;}
+.titulo		{width:50%; height:auto; float:left; text-align:center; padding-top:15px;}
+
+form		{width:100%; height:auto; float:left; padding-top:55px; padding-bottom:55px;}
+form ul		{width:390px; height:auto; float:left; padding-left:55px;}
+form li		{width:100%; height:auto; float:left; line-height:25px;}
+form #login	{width:385px; height:35px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/user.jpg) no-repeat left center;  text-indent:35px; font-size:14px; line-height:35px;}
+
+form #password	{width:385px; height:35px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/senha.jpg) no-repeat left center; text-indent:35px;  font-size:14px; line-height:35px;}
+
+form .enviar	{float:right; margin-right:3px; padding-top:5px;}
