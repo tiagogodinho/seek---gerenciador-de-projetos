@@ -2,14 +2,4 @@
 
 <%= render :partial => "form" %>
 
-<% if @projeto.nil? %>
-<%= link_to 'Mostrar', @pessoa %> |
-<% else %>
-<%= link_to 'Mostrar', projeto_pessoa_path(@projeto, @pessoa) %> |
-<% end %>
-
-<% if @projeto.nil? %>
-<%= link_to 'Voltar', pessoas_path %>
-<% else %>
-<%= link_to 'Voltar', projeto_pessoas_path %>
-<% end %>
+<%= link_to 'Apagar', @pessoa, :confirm => 'Are you sure?', :method => :delete %>
