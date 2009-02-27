@@ -2,6 +2,8 @@ class PessoasController < ApplicationController
   layout "principal"
   before_filter :create_menu
   
+  include AuthenticatedSystem
+  
   # GET /pessoas
   # GET /pessoas.xml
   def index
@@ -52,6 +54,7 @@ end
     @pessoa = Pessoa.new(params[:pessoa])
     respond_to do |format|
       if @pessoa.save
+        self.current_users = @pessoa
         if !@projeto.nil?
           @participante = Participante.new
           @participante.pessoa_id = @pessoa.id

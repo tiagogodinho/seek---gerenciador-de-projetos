@@ -19,13 +19,20 @@ ActiveRecord::Schema.define(:version => 20090219202141) do
   end
 
   create_table "pessoas", :force => true do |t|
+    t.string   "Login"
     t.string   "Nome"
     t.string   "Email"
-    t.string   "Senha"
     t.datetime "UltimoAcesso"
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.string   "remember_token"
+    t.datetime "remember_token_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "pessoas", ["Email"], :name => "index_pessoas_on_Email", :unique => true
+  add_index "pessoas", ["Login"], :name => "index_pessoas_on_Login", :unique => true
 
   create_table "projetos", :force => true do |t|
     t.string   "Nome"

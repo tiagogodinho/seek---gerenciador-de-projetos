@@ -1,8 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  
   map.home '', :controller => 'home', :action => 'index'
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
   
   map.resources :pessoas
   map.resources :projetos, :has_many => [:tarefas, :pessoas]
+  map.resource :session
 
   # The priority is based upon order of creation: first created -> highest priority.
 
