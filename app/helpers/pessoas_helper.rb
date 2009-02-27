@@ -91,5 +91,17 @@ module PessoasHelper
 #      link_to_login_with_IP content_text, options
     end
   end
+  
+  def name_of_current_users
+    if current_users
+      current_users.Nome
+    end
+  end
+  
+  def last_login_of_current_users
+    if current_users
+      current_users.UltimoAcesso
+    end
+  end
 
 end

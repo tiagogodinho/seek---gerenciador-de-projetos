@@ -12,14 +12,9 @@
 			<div class="mae">
 				<div class="topo">
 					<img src="/images/logo.jpg" alt="Seek" />
-					
-                    <!--
-                    <ul>
-                    	<li>Olá <strong>NOME</strong></li>
-                    	<li>Último acesso em XX/XX/XXXX</li>
-                    </ul>
-                    -->
-                    
+          <ul>
+            <li>Olá <strong><%= name_of_current_users %></strong></li>
+          </ul>                 
 				</div>
                 
 				<div class="menu">
@@ -29,10 +24,9 @@
 					</ul>
 					<div id="rr"><img src="/images/rrmenu.jpg" /></div>
                     <ul id="opt">
-                    	
-                    	<%= link_to ("<li>Pessoas</li>"), pessoas_path%>
+                    	<%= link_to ('<li>Pessoas</li>'), pessoas_path%>
                     	<a href="#"><li>Configurações</li></a>
-                    	<a href="#"><li id="sair">Sair</li></a>
+                    	<%= link_to ('<li id="sair">Sair</li>'), logout_path%>
                     </ul>
 				</div>
                 

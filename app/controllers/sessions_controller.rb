@@ -12,8 +12,11 @@ class SessionsController < ApplicationController
       self.current_users = users
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/pessoas')
-      flash[:notice] = "Logged in successfully"
+      
+      #Atualiza a data do último acesso
+      users.update_attribute(:UltimoAcesso, Time.now.strftime("%Y-%m-%d %H:%M:%S"))
+      
+      redirect_back_or_default projetos_path
     else
       note_failed_signin
       @login       = params[:login]
