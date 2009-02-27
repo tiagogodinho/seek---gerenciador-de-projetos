@@ -48,9 +48,18 @@ class ProjetosController < ApplicationController
 
     respond_to do |format|
       if @projeto.save
-        flash[:notice] = 'Projeto was successfully created.'
-        format.html { redirect_to(@projeto) }
-        format.xml  { render :xml => @projeto, :status => :created, :location => @projeto }
+        @participante = Participante.new
+        @participante.pessoa_id = current_users.id
+        @participante.projeto_id = @projeto.id
+        if @participante.save
+          flash[:notice] = 'Projeto was successfully created.'
+          format.html { redirect_to(@projeto) }
+          format.xml { render :xml => @projeto, :status => :created, :location => @projeto }
+        else
+          #flash[:notice] = current_users.id
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @projeto.errors, :status => :unprocessable_entity }
+        end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @projeto.errors, :status => :unprocessable_entity }
