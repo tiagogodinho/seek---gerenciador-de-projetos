@@ -35,13 +35,6 @@ end
   # GET /pessoas/new
   # GET /pessoas/new.xml
   def new
-    redirect_to '/404.html'
-    #@pessoa = Pessoa.new
-
-    #respond_to do |format|
-      #format.html # new.html.erb
-      #format.xml  { render :xml => @pessoa }
-    #end
   end
 
   # GET /pessoas/1/edit
@@ -121,5 +114,8 @@ end
     @projetos = Projeto.find(:all)
     @id = params[:projeto_id]
     @aba = "pessoas"
+  end
+  
+  def sent_invite
   end
 end

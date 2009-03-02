@@ -1,48 +1,23 @@
 <h3>Nova Pessoa</h3>
 
-<% @pessoa.password = @pessoa.password_confirmation = nil %>
-
-<% form_for([@projeto, @pessoa]) do |f| %>
-<%= f.error_messages %>
+<% form_tag(:controller => "pessoas", :action => "sent_invite") do %>
 <ul class="orcamento">
 	<li>
 		Nome
 	</li>
 	<li>
-		<%= f.text_field :Nome, :class => "txt" %>
-	</li>
-	<li>
-		Login
-	</li>
-	<li>
-		<%= f.text_field :Login, :class => "txt" %>
+		<%= text_field_tag 'Nome', nil, :class => "txt" %>
 	</li>
 	<li>
 		Email
 	</li> 
 	<li>
-		<%= f.text_field :Email, :class => "txt" %>
+		<%= text_field_tag 'Email', nil,  :class => "txt" %>
 	</li>
 	<li>
-		Senha
-	</li> 
-	<li>
-		<%= f.password_field :password, :class => "txt", :value => "" %>
-	</li>
-	<li>
-		Confirmar Senha
-	</li> 
-	<li>
-		<%= f.password_field :password_confirmation, :class => "txt", :value => "" %>
-	</li>
-	<li>
-		<%= f.submit "SALVAR", :class => "sub" %>
+		<%= submit_tag "SALVAR", :class => "sub" %>
 	</li>
 </ul>
 <% end %>
 
-<% if @projeto.nil? %>
-<%= link_to 'Voltar', pessoas_path %>
-<% else %>
 <%= link_to 'Voltar', projeto_pessoas_path %>
-<% end %>
