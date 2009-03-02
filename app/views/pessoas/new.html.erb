@@ -1,18 +1,18 @@
 <h3>Nova Pessoa</h3>
 
-<% form_tag(:controller => "pessoas", :action => "sent_invite") do %>
+<% form_tag invite_projeto_pessoas_path do %>
 <ul class="orcamento">
 	<li>
 		Nome
 	</li>
 	<li>
-		<%= text_field_tag 'Nome', nil, :class => "txt" %>
+		<%= text_field_tag :Nome, nil, :class => "txt" %>
 	</li>
 	<li>
 		Email
 	</li> 
 	<li>
-		<%= text_field_tag 'Email', nil,  :class => "txt" %>
+		<%= text_field_tag :Email, nil, :class => "txt" %>
 	</li>
 	<li>
 		<%= submit_tag "SALVAR", :class => "sub" %>
@@ -20,4 +20,8 @@
 </ul>
 <% end %>
 
+<% if @projeto.nil? %>
+<%= link_to 'Voltar', pessoas_path %>
+<% else %>
 <%= link_to 'Voltar', projeto_pessoas_path %>
+<% end %>

@@ -1,6 +1,7 @@
 class PessoasController < ApplicationController
   layout "principal"
-  before_filter :create_menu, :login_required
+  before_filter :create_menu
+  before_filter :login_required, :except => [:create]
   
   include AuthenticatedSystem
   
@@ -36,6 +37,14 @@ end
   # GET /pessoas/new.xml
   def new
   end
+  
+  def invite
+      @projeto = Projeto.find(params[:projeto_id])
+      @nome = params[:Nome]
+      @email = params[:Email]
+      PessoasMailer.deliver_invite(@nome, @email, @projeto)
+      redirect_to projeto_pessoas_path(@projeto)
+  end
 
   # GET /pessoas/1/edit
   def edit
@@ -53,22 +62,11 @@ end
     respond_to do |format|
       if @pessoa.save
         self.current_users = @pessoa
-        if !@projeto.nil?
-          @participante = Participante.new
-          @participante.pessoa_id = @pessoa.id
-          @participante.projeto_id = @projeto.id
-          if @participante.save
-            flash[:notice] = 'Pessoa was successfully created.'
-            #format.html { redirect_to(@pessoa) }
-            format.html { redirect_to(projeto_pessoas_path(@projeto)) }
-            format.xml  { render :xml => @pessoa, :status => :created, :location => @pessoa }
-          end
-        else
           flash[:notice] = 'Pessoa was successfully created.'
-          format.html { redirect_to(@pessoa) }
+          format.html { redirect_back_or_default projetos_path }
           format.xml  { render :xml => @pessoa, :status => :created, :location => @pessoa }
-        end
       else
+        format.html { redirect_back_or_default projetos_path }
         format.html { render :action => "new" }
         format.xml  { render :xml => @pessoa.errors, :status => :unprocessable_entity }
       end
@@ -114,8 +112,5 @@ end
     @projetos = Projeto.find(:all)
     @id = params[:projeto_id]
     @aba = "pessoas"
-  end
-  
-  def sent_invite
   end
 end
