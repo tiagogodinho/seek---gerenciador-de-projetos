@@ -1,0 +1,29 @@
+<% for projeto in @projetos %>
+
+<h3><%= projeto.Nome %></h3>
+<ul class="tarefas">
+	
+<% date = nil %>
+	
+<% for tarefa in projeto.tarefas.all(:order => "created_at desc") %>
+	
+	<% if tarefa.created_at.strftime("%A, %d %B %Y") != date %>
+	
+	<% date = tarefa.created_at.strftime("%A, %d %B %Y") %>
+	
+	<li>
+		<span id="date"><%= date %></span>
+	</li>
+	
+	<% end %>
+	
+	<li id="item">
+		<span id="comment">Tarefa</span>
+		<span id="ctr"><%= link_to tarefa.Nome, projeto_tarefa_path(projeto, tarefa) %></span>
+		<span id="sign"></span>
+	</li>
+	
+<% end #for %>
+
+</ul>
+<% end %>

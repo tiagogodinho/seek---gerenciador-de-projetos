@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   def index
     if logged_in?
-      render :action => "dashboard"
+      @projetos = current_users.projetos.all(:order => "Nome")
+      render :layout => "principal", :action => "dashboard"
     end
   end
 end
