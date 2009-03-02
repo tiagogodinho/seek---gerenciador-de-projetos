@@ -7,7 +7,7 @@
 		<span><%= link_to "Projetos", projetos_path %></span>
 		<div id="rr"></div>
 	</h1>
-	<% for projeto in @projetos %>
+	<% for projeto in pessoa_projetos %>
 	<div class="projetos">
 	<% if @id == projeto.id.to_s %>
 		<h2 class="sel">

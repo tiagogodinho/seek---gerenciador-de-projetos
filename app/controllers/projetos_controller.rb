@@ -97,7 +97,6 @@ class ProjetosController < ApplicationController
   end
   
   def create_menu
-  	@projetos = Projeto.find(:all)
   	@id = params[:id]
   	@aba = "projetos"
   end

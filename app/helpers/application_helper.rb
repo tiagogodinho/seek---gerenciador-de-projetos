@@ -8,4 +8,8 @@ module ApplicationHelper
       :only_path => false,
       :controller => 'avatar.php'}.merge(options))
   end
+  
+  def pessoa_projetos
+    current_users.projetos.all(:order => "Nome")
+  end
 end
