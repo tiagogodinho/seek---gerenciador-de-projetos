@@ -17,7 +17,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: pm_production
-  username: root
+  database: th30642_pm
+  username: th30642_tiago
   password: 123
-  host: localhost
+  host: bm8.webservidor.net
