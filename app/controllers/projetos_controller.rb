@@ -5,7 +5,7 @@ class ProjetosController < ApplicationController
   # GET /projetos
   # GET /projetos.xml
   def index
-    @projetos = Projeto.find(:all)
+    @projetos = current_users.projetos.all(:order => "Nome")
 
     respond_to do |format|
       format.html # index.html.erb
