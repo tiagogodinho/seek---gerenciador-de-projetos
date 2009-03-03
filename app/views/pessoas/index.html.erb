@@ -1,32 +1,16 @@
 <h3>Lista de Pessoas</h3>
-
 <% for pessoa in @pessoas %>
-
 <div class="pessoas">
-	<div id="foto">
-	<% if @projeto.nil? %>
-		<%= link_to(image_tag(gravatar_url_for(pessoa.Email), {:width => 48, :height => 48}), pessoa_path(pessoa)) %>
-	<% else %>
-		<%= link_to(image_tag(gravatar_url_for(pessoa.Email), {:width => 48, :height => 48}), projeto_pessoa_path(@projeto, pessoa)) %>
-	<% end %>
-	</div>
-	<strong>
-	<% if @projeto.nil? %>
-		<%= link_to pessoa.Nome, pessoa_path(pessoa) %>
-	<% else %>
-		<%= link_to pessoa.Nome, projeto_pessoa_path(@projeto, pessoa) %>
-	<% end %>
-	</strong>
-	<br />
-<% if @projeto.nil? %>
-		<%= link_to pessoa.Email, pessoa_path(pessoa) %>
-<% else %>
-		<%= link_to pessoa.Email, projeto_pessoa_path(@projeto, pessoa) %>
-<% end %>
+  <div id="foto">
+    <%= link_to(image_tag(gravatar_url_for(pessoa.Email), {:width => 48, :height => 48}), pessoa_path(pessoa)) %>
+  </div>
+  <strong>
+    <%= link_to pessoa.Nome, pessoa_path(pessoa) %>
+  </strong>
+  <br />
+  <%= link_to pessoa.Email, pessoa_path(pessoa) %>
 </div>
-
 <% end %>
-
 <% if !@projeto.nil? %>
 <%= link_to 'Convidar colaboradores', invite_projeto_pessoas_path %>
 <% end %>
