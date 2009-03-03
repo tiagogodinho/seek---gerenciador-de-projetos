@@ -36,12 +36,19 @@ end
   def new
   end
   
+  # GET /projetos/1/pessoas/invite
+  # GET /projetos/1/pessoas/invite.xml
   def invite
-      @projeto = Projeto.find(params[:projeto_id])
-      @nome = params[:Nome]
-      @email = params[:Email]
-      PessoasMailer.deliver_invite(@nome, @email, @projeto)
-      redirect_to projeto_pessoas_path(@projeto)
+  end
+  
+  # POST /projetos/1/pessoas/send_invite
+  # POST /projetos/1/pessoas/send_invite.xml
+  def send_invite
+    @projeto = Projeto.find(params[:projeto_id])
+    @nome = params[:Nome]
+    @email = params[:Email]
+    PessoasMailer.deliver_invite(@nome, @email, @projeto)
+    redirect_to projeto_pessoas_path(@projeto)
   end
 
   # GET /pessoas/1/edit

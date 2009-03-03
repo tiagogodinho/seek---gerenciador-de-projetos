@@ -1,0 +1,27 @@
+<h3>Convidar colaboradores</h3>
+
+<% form_tag send_invite_projeto_pessoas_path do %>
+<ul class="orcamento">
+	<li>
+		Nome
+	</li>
+	<li>
+		<%= text_field_tag :Nome, nil, :class => "txt" %>
+	</li>
+	<li>
+		Email
+	</li> 
+	<li>
+		<%= text_field_tag :Email, nil, :class => "txt" %>
+	</li>
+	<li>
+		<%= submit_tag "SALVAR", :class => "sub" %>
+	</li>
+</ul>
+<% end %>
+
+<% if @projeto.nil? %>
+<%= link_to 'Voltar', pessoas_path %>
+<% else %>
+<%= link_to 'Voltar', projeto_pessoas_path %>
+<% end %>

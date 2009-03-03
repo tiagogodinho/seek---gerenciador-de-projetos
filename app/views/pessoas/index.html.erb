@@ -27,8 +27,6 @@
 
 <% end %>
 
-<% if @projeto.nil? %>
-<%= link_to 'Nova pessoa', new_pessoa_path %>
-<% else %>
-<%= link_to 'Nova pessoa', new_projeto_pessoa_path %>
+<% if !@projeto.nil? %>
+<%= link_to 'Convidar colaboradores', invite_projeto_pessoas_path %>
 <% end %>

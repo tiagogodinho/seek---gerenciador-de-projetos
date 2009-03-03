@@ -10,10 +10,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :projetos do |projetos|
     projetos.resources :tarefas
-    projetos.resources :pessoas, :collection => { :invite => :post }
+    projetos.resources :pessoas, :collection => { :invite => :get, :send_invite => :post }
   end
   
-  #map.resources :projetos, :has_many => [:tarefas, :pessoas]
   map.resource :session
 
   # The priority is based upon order of creation: first created -> highest priority.
