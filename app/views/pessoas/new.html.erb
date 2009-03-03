@@ -1,27 +1,51 @@
-<h3>Nova Pessoa</h3>
-
-<% form_tag invite_projeto_pessoas_path do %>
-<ul class="orcamento">
-	<li>
-		Nome
-	</li>
-	<li>
-		<%= text_field_tag :Nome, nil, :class => "txt" %>
-	</li>
-	<li>
-		Email
-	</li> 
-	<li>
-		<%= text_field_tag :Email, nil, :class => "txt" %>
-	</li>
-	<li>
-		<%= submit_tag "SALVAR", :class => "sub" %>
-	</li>
-</ul>
-<% end %>
-
-<% if @projeto.nil? %>
-<%= link_to 'Voltar', pessoas_path %>
-<% else %>
-<%= link_to 'Voltar', projeto_pessoas_path %>
-<% end %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Seek - Gerenciador de Projetos</title>
+  </head>
+  <body>
+    <h3>Nova Pessoaa</h3>
+    <% @pessoa.password = @pessoa.password_confirmation = nil %>
+    <% form_for([@projeto, @pessoa]) do |f| %>
+    <%= f.error_messages %>
+      <ul class="orcamento">
+        <li>
+          Nome
+        </li>
+        <li>
+          <%= f.text_field :Nome, :class => "txt" %>
+        </li>
+        <li>
+          Login
+        </li>
+        <li>
+          <%= f.text_field :Login, :class => "txt" %>
+        </li>
+        <li>
+          Email
+        </li> 
+        <li>
+          <%= f.text_field :Email, :class => "txt" %>
+        </li>
+        <li>
+          Senha
+        </li> 
+        <li>
+          <%= f.password_field :password, :class => "txt", :value => "" %>
+        </li>
+        <li>
+          Confirmar Senha
+        </li> 
+        <li>
+          <%= f.password_field :password_confirmation, :class => "txt", :value => "" %>
+        </li>
+        <li>
+          <%= f.submit "SALVAR", :class => "sub" %>
+        </li>
+      </ul>
+    <% end %>
+    <%= link_to 'Voltar', '/' %>
+  </body>
+</html>

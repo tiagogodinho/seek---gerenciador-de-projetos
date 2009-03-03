@@ -1,7 +1,7 @@
 class PessoasController < ApplicationController
-  layout "principal"
+  layout "principal", :except => :new
   before_filter :create_menu
-  before_filter :login_required, :except => [:create]
+  before_filter :login_required, :except => [:create, :new]
   
   # GET /pessoas
   # GET /pessoas.xml
@@ -31,9 +31,15 @@ end
     end
   end
 
-  # GET /pessoas/new
-  # GET /pessoas/new.xml
+  # GET /signup
+  # GET /signup.xml
   def new
+    @pessoa = Pessoa.new
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @pessoa }
+    end
   end
   
   # GET /projetos/1/pessoas/invite

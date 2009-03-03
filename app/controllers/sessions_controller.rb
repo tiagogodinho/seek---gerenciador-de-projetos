@@ -1,19 +1,6 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
-  
-  # GET /signup
-  # GET /signup.xml
-  def signup
-    @pessoa = Pessoa.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @pessoa }
-    end
-  end
-  
   def login
-    
     if logged_in?
       redirect_to projetos_path
     else
