@@ -5,12 +5,13 @@ class ProjetosController < ApplicationController
   # GET /projetos
   # GET /projetos.xml
   def index
-    @projetos = current_users.projetos.all(:order => "Nome")
+    redirect_to "/"
+    #@projetos = current_users.projetos.all(:order => "Nome")
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @projetos }
-    end
+    #respond_to do |format|
+      #format.html # index.html.erb
+      #format.xml  { render :xml => @projetos }
+    #end
   end
 
   # GET /projetos/1

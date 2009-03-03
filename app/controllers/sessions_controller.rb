@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         #Atualiza a data do último acesso
         users.update_attribute(:UltimoAcesso, Time.now.strftime("%Y-%m-%d %H:%M:%S"))
         
-        redirect_back_or_default projetos_path
+        redirect_back_or_default "/"
       else
         note_failed_signin
         @login       = params[:login]
