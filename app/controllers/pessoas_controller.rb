@@ -3,8 +3,6 @@ class PessoasController < ApplicationController
   before_filter :create_menu
   before_filter :login_required, :except => [:create]
   
-  include AuthenticatedSystem
-  
   # GET /pessoas
   # GET /pessoas.xml
   def index
