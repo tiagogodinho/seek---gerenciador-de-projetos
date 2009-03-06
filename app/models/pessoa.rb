@@ -18,8 +18,9 @@ class Pessoa < ActiveRecord::Base
   validates_length_of       :Email,    :within => 6..100 #r@a.wk
   validates_uniqueness_of   :Email
   validates_format_of       :Email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
-
   
+  validates_presence_of     :password
+  validates_presence_of     :password_confirmation
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation

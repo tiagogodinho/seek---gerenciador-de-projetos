@@ -57,15 +57,6 @@ end
     redirect_to projeto_pessoas_path(@projeto)
   end
 
-  # GET /pessoas/1/edit
-  def edit
-    if request.post?
-      @pessoa = Pessoa.find(params[:id])
-    else
-      redirect_to '/404.html'
-    end
-  end
-
   # POST /pessoas
   # POST /pessoas.xml
   def create
@@ -83,6 +74,11 @@ end
       end
     end
   end
+  
+  # GET /account
+  def edit
+    @pessoa = current_users
+  end
 
   # PUT /pessoas/1
   # PUT /pessoas/1.xml
@@ -90,12 +86,45 @@ end
     @pessoa = Pessoa.find(params[:id])
 
     respond_to do |format|
-      if @pessoa.update_attributes(params[:pessoa])
+      if @pessoa.update_attributes
         flash[:notice] = 'Pessoa was successfully updated.'
         format.html { redirect_to account_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
+        format.xml  { render :xml => @pessoa.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
+  # POST /pessoas/1/change_password
+  # POST /pessoas/1/change_password.xml
+  def change_password
+    @pessoa = Pessoa.authenticate(current_users.Login, params[:password_old])
+    
+    #@pessoa.Nome = 'Godinho'
+    
+    respond_to do |format|
+      if @pessoa
+        #if params[:password] == params[:password_confirmation]
+          if @pessoa.update_attributes( { :password => params[:password], :password_confirmation => params[:password_confirmation] } )
+          #if @pessoa.update_attribute(:password, params[:password])
+            flash[:notice] = 'Nova senha cadastrada com sucesso'
+            format.html { redirect_to account_path }
+            format.xml  { head :ok }
+          else
+            flash[:notice] = 'Não foi possível cadastrar uma nova senha'
+            format.html { redirect_to account_path }
+            format.xml  { render :xml => @pessoa.errors, :status => :unprocessable_entity }
+          end
+        #else
+          #flash[:notice] = 'Senhas diferentes'
+          #format.html { redirect_to account_path }
+          #format.xml  { render :xml => @pessoa.errors, :status => :unprocessable_entity }
+        #end
+      else
+        flash[:notice] = 'Senha atual incorreta'
+        format.html { redirect_to account_path }
         format.xml  { render :xml => @pessoa.errors, :status => :unprocessable_entity }
       end
     end

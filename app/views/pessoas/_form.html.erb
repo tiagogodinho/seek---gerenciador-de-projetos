@@ -1,26 +1,52 @@
-<% form_for([@projeto, @pessoa]) do |f| %>
-<%= f.error_messages %>
-<ul class="orcamento">
-	<li>
-		Nome
-	</li>
-	<li>
-		<%= f.text_field :Nome, :class => "txt" %>
-	</li>
-	<li>
-		Email
-	</li> 
-	<li>
-		<%= f.text_field :Email, :class => "txt" %>
-	</li>
-	<li>
-		Senha
-	</li> 
-	<li>
-		<%= f.password_field :Senha, :class => "txt", :value => "" %>
-	</li>
-	<li>
-		<%= f.submit "SALVAR", :class => "sub" %>
-	</li>
-</ul>
+<% form_for @pessoa do |f| %>
+  <%= f.error_messages %>
+  <ul class="orcamento">
+    <li>
+        Nome
+    </li>
+    <li>
+      <%= f.text_field :Nome, :class => "txt" %>
+    </li>
+    <li>
+      Login
+    </li>
+    <li>
+      <%= f.text_field :Login, :class => "txt" %>
+    </li>
+    <li>
+      Email
+    </li> 
+    <li>
+      <%= f.text_field :Email, :class => "txt" %>
+    </li>
+    <li>
+      <%= f.submit "SALVAR", :class => "sub" %>
+    </li>
+  </ul>
+<% end %>
+
+<% form_tag change_password_pessoa_path(@pessoa) do %>
+  <ul class="orcamento">
+    <li>
+      Senha atual
+    </li> 
+    <li>
+      <%= password_field_tag :password_old, nil, :class => "txt", :value => "" %>
+    </li>
+    <li>
+      Nova senha
+    </li> 
+    <li>
+      <%= password_field_tag :password, nil,:class => "txt", :value => "" %>
+    </li>
+    <li>
+      Confirmar Senha
+    </li> 
+    <li>
+      <%= password_field_tag :password_confirmation, nil, :class => "txt", :value => "" %>
+    </li>
+    <li>
+      <%= submit_tag "MUDAR SENHAS", :class => "sub" %>
+    </li>
+  </ul>
 <% end %>
