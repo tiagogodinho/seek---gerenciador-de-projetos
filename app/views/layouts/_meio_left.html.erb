@@ -10,14 +10,10 @@
     </h1>
     <% for projeto in pessoa_projetos %>
       <div class="projetos">
-        <% if @id == projeto.id.to_s %>
-          <h2 class="sel">
-        <% else %>		
-          <h2 class="unsel">
-        <% end %>
-            <%= link_to projeto.Nome, projeto %>
-            <img src="/images/exp_opt.png" />
-          </h2>
+        <h2 class="<%= class_projeto(projeto) %>">
+          <%= link_to projeto.Nome, projeto %>
+          <img src="/images/exp_opt.png" />
+        </h2>
       </div>						
     <% end %>
   </div>

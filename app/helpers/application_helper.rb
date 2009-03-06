@@ -12,4 +12,12 @@ module ApplicationHelper
   def pessoa_projetos
     current_users.projetos.all(:order => "Nome")
   end
+  
+  def class_projeto(projeto)
+    if projeto.id.to_s == params[:id]
+      :sel
+    else
+      :unsel
+    end
+  end
 end
