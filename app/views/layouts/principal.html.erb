@@ -1,54 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Seek - Gerenciador de Projetos</title>
-		<link rel="stylesheet" type="text/css" href="/stylesheets/layout.css"/>
-		<script type="text/javascript" src="/javascripts/jquery-1.3.1.min.js"></script>
-	</head>
-	<body>
-		<div class="web">
-			<div class="mae">
-				<div class="topo">
-					<img src="/images/logo.jpg" alt="Seek" />
-          <ul>
-            <li>Olá <strong><%= name_of_current_users %></strong></li>
-          </ul>                 
-				</div>
-                
-				<div class="menu">
-					<div id="lr"><img src="/images/lrmenu.jpg" /></div>
-					<ul>
-						<a href="/"><li>Inicial</li></a>	
-					</ul>
-					<div id="rr"><img src="/images/rrmenu.jpg" /></div>
-                    <ul id="opt">
-                    	<%= link_to ('<li>Pessoas</li>'), pessoas_path%>
-                    	<%= link_to ('<li>Configurações</li>'), account_path %>
-                    	<%= link_to ('<li id="sair">Sair</li>'), logout_path%>
-                    </ul>
-				</div>
-                
-				<div class="meio">
-					
-					<div class="left">
-						<%= render :partial => "layouts/menu" %>
-					</div>
-                    
-					<div class="right">
-						<div id="conteudo">
-							<%= render :partial => "layouts/abas" %>
-							<div class="box">
-								<%= yield  %>
-							</div>
-							
-						</div>
-					</div>
-					
-				</div>
-				
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Seek - Gerenciador de Projetos</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/layout.css" />
+    <script type="text/javascript" src="/javascripts/jquery-1.3.1.min.js"></script>
+  </head>
+  <body>
+    <div class="web">
+      <div class="mae">
+        <%= render :partial => "layouts/topo" %>
+        <%= render :partial => "layouts/menu" %>
+        <%= render :partial => "layouts/meio" %>
+      </div>
+    </div>
+  </body>
 </html>

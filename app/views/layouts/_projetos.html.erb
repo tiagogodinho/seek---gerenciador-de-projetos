@@ -1,0 +1,22 @@
+<div class="novo">
+	<%= link_to 'NOVO PROJETO', new_projeto_path %>
+</div>
+<div class="box">
+	<h1>
+		<div id="lr"></div>
+		<span>Meus Projetos</span>
+		<div id="rr"></div>
+	</h1>
+	<% for projeto in pessoa_projetos %>
+	<div class="projetos">
+	<% if @id == projeto.id.to_s %>
+		<h2 class="sel">
+	<% else %>		
+		<h2 class="unsel">
+	<% end %>
+			<%= link_to projeto.Nome, projeto %>
+			<img src="/images/exp_opt.png" />
+		</h2>
+	</div>						
+	<% end %>
+</div>
