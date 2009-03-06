@@ -1,11 +1,4 @@
-<% if @id.nil? %>
-<h1>
-	<div id="lr"></div>
-	<div id="rr"></div>
-</h1>
-<% else %>
-<h1>
-	<div id="lr"></div>
+<% if !@id.nil? %>
 	<ul>
 	<% if @aba == "projetos"%>
 		<li id="sel">
@@ -36,6 +29,4 @@
 			<%= link_to 'Configurações do projeto', edit_projeto_path(@projeto) %>
 		</li>
 	</ul>
-	<div id="rr"></div>
-</h1>
 <% end %>

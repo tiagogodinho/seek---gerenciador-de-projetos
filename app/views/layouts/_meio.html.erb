@@ -1,13 +1,4 @@
 <div class="meio">
-  <div class="left">
-    <%= render :partial => "layouts/projetos" %>
-  </div>
-  <div class="right">
-    <div id="conteudo">
-      <%= render :partial => "layouts/abas" %>
-      <div class="box">
-        <%= yield  %>
-      </div>
-    </div>
-  </div>
+  <%= render :partial => "layouts/meio_left" %>
+  <%= render :partial => "layouts/meio_right" %>
 </div>
