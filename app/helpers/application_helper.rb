@@ -14,7 +14,7 @@ module ApplicationHelper
   end
   
   def class_projeto(projeto)
-    if projeto.id.to_s == params[:id]
+    if projeto.id.to_s == @id
       :sel
     else
       :unsel
