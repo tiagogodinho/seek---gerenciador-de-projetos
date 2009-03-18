@@ -1,31 +1,15 @@
 <% if !@id.nil? %>
 	<ul>
-	<% if @aba == "projetos"%>
-		<li id="sel">
-	<% else %>
-		<li>
-	<% end %>
+		<li id="<%= class_aba(:projetos) %>">
 			<%= link_to 'Últimas atualizações', projeto_path(@projeto) %>
 		</li>
-	<% if @aba == "tarefas"%>
-		<li id="sel">
-	<% else %>
-		<li>
-	<% end %>
+		<li id="<%= class_aba(:tarefas) %>">
 			<%= link_to 'Tarefas', projeto_tarefas_path(@projeto) %>
 		</li>
-	<% if @aba == "pessoas"%>
-		<li id="sel">
-	<% else %>
-		<li>
-	<% end %>
+		<li id="<%= class_aba(:pessoas) %>">
 			<%= link_to 'Pessoas', projeto_pessoas_path(@projeto) %>
 		</li>
-	<% if @aba == "configuracao"%>
-		<li id="sel">
-	<% else %>
-		<li>
-	<% end %>
+		<li id="<%= class_aba(:configuracao) %>">
 			<%= link_to 'Configurações do projeto', edit_projeto_path(@projeto) %>
 		</li>
 	</ul>

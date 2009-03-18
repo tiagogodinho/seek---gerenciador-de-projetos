@@ -20,4 +20,12 @@ module ApplicationHelper
       :unsel
     end
   end
+  
+  def class_aba(aba)
+    @aba
+    if aba == @aba
+      :sel
+    end
+  end
+  
 end

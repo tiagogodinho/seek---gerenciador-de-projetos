@@ -39,7 +39,7 @@ class ProjetosController < ApplicationController
   # GET /projetos/1/edit
   def edit
     @projeto = Projeto.find(params[:id])
-    @aba = "configuracao"
+    @aba = :configuracao
   end
 
   # POST /projetos
@@ -99,6 +99,6 @@ class ProjetosController < ApplicationController
   
   def create_menu
   	@id = params[:id]
-  	@aba = "projetos"
+  	@aba = :projetos
   end
 end

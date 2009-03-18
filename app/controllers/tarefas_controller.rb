@@ -93,7 +93,7 @@ class TarefasController < ApplicationController
 	@projetos = Projeto.find(:all)
 	@projeto = Projeto.find(params[:projeto_id])
 	@id = params[:projeto_id]
-	@aba = "tarefas"
+	@aba = :tarefas
   end
 
 end
