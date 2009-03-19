@@ -56,6 +56,27 @@ end
     PessoasMailer.deliver_invite(@nome, @email, @projeto)
     redirect_to projeto_pessoas_path(@projeto)
   end
+  
+  # GET /projetos/1/pessoas/accept_invite
+  # GET /projetos/1/pessoas/accept_invite.xml
+  def accept_invite
+    @projeto = Projeto.find(params[:projeto_id])
+    @participante = Participante.new
+    @participante.pessoa_id = current_users.id
+    @participante.projeto_id = @projeto.id
+    
+    respond_to do |format|
+      if @participante.save
+        flash[:notice] = 'Participação aceita com sucesso'
+        format.html { redirect_to projeto_pessoas_path(@projeto) }
+        format.xml  { render :xml => @pessoa, :status => :created, :location => @pessoa }
+      else
+        flash[:notice] = 'Ops. Participação não aceita'
+        format.html { redirect_to projeto_pessoas_path(@projeto) }
+        format.xml  { render :xml => @pessoa.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   # POST /pessoas
   # POST /pessoas.xml

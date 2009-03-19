@@ -10,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :projetos do |projetos|
     projetos.resources :tarefas
-    projetos.resources :pessoas, :collection => { :invite => :get, :send_invite => :post }
+    projetos.resources :pessoas, :collection => { :invite => :get, :send_invite => :post, :accept_invite => :get }
   end
   
   map.resource :session
