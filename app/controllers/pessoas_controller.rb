@@ -89,7 +89,7 @@ end
           format.html { redirect_back_or_default projetos_path }
           format.xml  { render :xml => @pessoa, :status => :created, :location => @pessoa }
       else
-        format.html { redirect_back_or_default projetos_path }
+        format.html { redirect_to signup_path }
         format.html { render :action => "new" }
         format.xml  { render :xml => @pessoa.errors, :status => :unprocessable_entity }
       end
