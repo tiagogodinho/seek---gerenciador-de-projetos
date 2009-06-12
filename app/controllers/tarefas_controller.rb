@@ -67,7 +67,7 @@ class TarefasController < ApplicationController
     respond_to do |format|
       if @tarefa.update_attributes(params[:tarefa])
         flash[:notice] = 'Tarefa was successfully updated.'
-        format.html { redirect_to(projeto_tarefa_path(@projeto, @tarefa)) }
+        format.html { redirect_to projeto_tarefas_path(@projeto) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
