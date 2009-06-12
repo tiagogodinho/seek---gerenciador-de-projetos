@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => 'home', :action => 'index'
   
   map.account '/account', :controller => 'pessoas',   :action => 'edit'
-  map.home    '',         :controller => 'home',      :action => 'index'
   map.logout  '/logout',  :controller => 'sessions',  :action => 'destroy'
   map.login   '/login',   :controller => 'sessions',  :action => 'login'
   map.signup  '/signup',  :controller => 'pessoas',   :action => 'new'
