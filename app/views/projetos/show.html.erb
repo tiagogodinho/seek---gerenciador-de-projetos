@@ -5,12 +5,12 @@
 	
 <% for tarefa in @projeto.tarefas.all(:order => "created_at desc") %>
 	
-	<% if tarefa.created_at.strftime("%A, %d de %B de %Y") != date %>
+	<% if tarefa.created_at.to_date != date %>
 	
-	<% date = tarefa.created_at.strftime("%A, %d de %B de %Y") %>
+	<% date = tarefa.created_at.to_date %>
 	
 	<li>
-		<span id="date"><%= date %></span>
+		<span id="date"><%= l tarefa.created_at.to_date, :format => :dayweek %></span>
 	</li>
 	
 	<% end %>
