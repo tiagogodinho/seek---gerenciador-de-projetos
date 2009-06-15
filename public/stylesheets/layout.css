@@ -94,3 +94,6 @@ a:hover	{text-decoration:underline;}
 /*.pessoas a			{color:#0033CC;}*/
 .pessoas #foto		{width:auto; height:auto; float:left; padding:5px; border:solid 1px #f1f1f1; display:block; margin-right:10px;}
 .pessoas:hover		{background-color:#F9F9F9;}
+
+/*--------------------CALENDÁRIO----------------------*/
+#ui-datepicker-div {font-size: 12px; margin-left:20px;}

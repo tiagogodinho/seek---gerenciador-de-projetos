@@ -17,13 +17,13 @@
 		Data de Início
 	</li> 
 	<li>
-		<%= f.text_field :DtInicio, :class => "txt" %>
+		<%= f.text_field :DtInicio, :id => "data_inicio", :class => "txt" %>
 	</li>
 	<li>
 		Data de Término
 	</li> 
 	<li>
-		<%= f.text_field :DtTermino, :class => "txt" %>
+		<%= f.text_field :DtTermino, :id => "data_termino",  :class => "txt" %>
 	</li>
 	<li>
 		Prioridade
@@ -48,3 +48,10 @@
 	</li>
 </ul>
 <% end %>
+
+<script type="text/javascript">
+  $(function(){
+    $("#data_inicio").datepicker({showOn: 'button', buttonImage: '/images/calendar.gif', buttonImageOnly: true}, $.datepicker.regional['pt-BR']);
+    $("#data_termino").datepicker({showOn: 'button', buttonImage: '/images/calendar.gif', buttonImageOnly: true}, $.datepicker.regional['pt-BR']);
+  });
+</script>
