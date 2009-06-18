@@ -14,6 +14,11 @@
 	<% end %>
 		<span id="ctr"><%= link_to tarefa.Nome, projeto_tarefa_path(@projeto, tarefa) %></span>
 		<span id="sign"></span>
+	
+    <% link_to(projeto_tarefa_comments_path(@projeto, tarefa), :class => "comments", :title => "Comentários") do %>
+  	  <span class="ui-icon ui-icon-comment"></span>
+  	<% end %>
+		
 	</li>
 	
 <% end %>

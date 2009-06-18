@@ -39,6 +39,7 @@ class TarefasController < ApplicationController
   # GET /tarefas/1/edit
   def edit
     @tarefa = Tarefa.find(params[:id])
+    @tarefa.DtInicio = l(@tarefa.DtInicio)
   end
   
   # POST /tarefas

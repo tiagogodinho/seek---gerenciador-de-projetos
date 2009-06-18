@@ -1,4 +1,4 @@
-<h1>Editing comment</h1>
+<h1>Alterar comentário</h1>
 
 <% form_for(@comment) do |f| %>
   <%= f.error_messages %>
@@ -8,9 +8,8 @@
     <%= f.text_area :comment %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Alterar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Voltar', projeto_tarefa_comments_path(@projeto, @tarefa) %>

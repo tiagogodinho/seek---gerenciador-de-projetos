@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
+  layout "principal"
+  before_filter :create_menu, :login_required
+  
   # GET /comments
   # GET /comments.xml
   def index
-    @comments = Comment.all
+    @tarefa = Tarefa.find(params[:tarefa_id])
+    @comments = @tarefa.comments
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,11 +45,13 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @comment = Comment.new(params[:comment])
+    @comment.pessoa_id = current_users.id
+    @comment.tarefa_id = params[:tarefa_id]
 
     respond_to do |format|
       if @comment.save
         flash[:notice] = 'Comment was successfully created.'
-        format.html { redirect_to(@comment) }
+        format.html { redirect_to projeto_tarefa_comments_path(@projeto, @tarefa) }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
         format.html { render :action => "new" }
@@ -78,8 +84,16 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(comments_url) }
+      format.html { redirect_to projeto_tarefa_comments_path(@projeto, @tarefa) }
       format.xml  { head :ok }
     end
+  end
+  
+  def create_menu
+    @projetos = Projeto.find(:all)
+    @projeto = Projeto.find(params[:projeto_id])
+    @tarefa = Tarefa.find(params[:projeto_id])
+    @id = params[:projeto_id]
+    @aba = :tarefas
   end
 end

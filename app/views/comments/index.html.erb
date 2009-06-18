@@ -1,20 +1,33 @@
-<h1>Listing comments</h1>
+<h3><%= @tarefa.Nome %></h3>
 
-<table>
-  <tr>
-    <th>Comment</th>
-  </tr>
-
-<% @comments.each do |comment| %>
-  <tr>
-    <td><%=h comment.comment %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<h4><%= @tarefa.Descricao %></h4>
+	
+<% for comment in @comments %>
+<div class="pessoas">
+  <% if comment.pessoa.id == current_users.id %>
+  <ul id="icons" class="ui-widget ui-helper-clearfix">
+    <li class="ui-state-default ui-corner-all" title=".ui-icon-circle-close">
+      <% link_to(edit_projeto_tarefa_comment_path(@projeto, @tarefa, comment)) do %>
+	      <span class="ui-icon ui-icon-pencil"></span>
+	    <% end %>
+    </li>
+	  <li class="ui-state-default ui-corner-all" title=".ui-icon-circle-close">
+	    <% link_to(projeto_tarefa_comment_path(@projeto, @tarefa, comment), :confirm => 'Are you sure?', :method => :delete) do %>
+	      <span class="ui-icon ui-icon-circle-close"></span>
+	    <% end %>
+	  </li>
+	</ul>
+	<% end %>
+	
+  <div id="foto">
+    <%= link_to(image_tag(gravatar_url_for(current_users.Email), {:width => 48, :height => 48}), pessoa_path(current_users)) %>
+  </div>
+  <strong><%= link_to comment.pessoa.Nome, pessoa_path(comment.pessoa.id) %></strong> - <%=l comment.created_at %>
+  <br />
+  
+  <%= comment.comment %>
+</div>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New comment', new_comment_path %>
+<%= link_to 'Novo comentário', new_projeto_tarefa_comment_path(@projeto, @tarefa) %> |
+<%= link_to 'Voltar para tarefas', projeto_tarefas_path(@projeto) %>

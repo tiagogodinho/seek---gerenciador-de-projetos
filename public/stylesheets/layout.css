@@ -88,6 +88,7 @@ a:hover	{text-decoration:underline;}
 .tarefas li#item span#ctr	{width:auto; float:left; padding-left:5px;}
 .tarefas li span#date	{width:auto; height:auto; float:left; color:#666; border-bottom:solid 1px #CACACC; font-size:11px; text-transform:uppercase;}
 .tarefas li span#sign	{width:auto; height:auto; float:right; font-size:11px; color:#999;}
+.tarefas li span a .comments	{width:auto; height:auto; float:left; font-size:11px; color:#999;}
 
 /*--------------------PESSOAS ----------------------*/
 .pessoas			{width:745px; height:auto; float:left; padding:15px;}
@@ -97,3 +98,7 @@ a:hover	{text-decoration:underline;}
 
 /*--------------------CALENDÁRIO----------------------*/
 #ui-datepicker-div {font-size: 12px; margin-left:20px;}
+
+ul#icons {margin: 0; padding: 0; float: left; clear: both;}
+ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none; clear:both;}
+ul#icons span.ui-icon {float: left; margin: 0 4px;}
