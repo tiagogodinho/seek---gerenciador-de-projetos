@@ -5,7 +5,7 @@ module ApplicationHelper
   end
   
   def pessoa_projetos
-    current_users.projetos.all(:order => "Nome")
+    Projeto.all(:order => "Nome")
   end
   
   def class_projeto(projeto)
