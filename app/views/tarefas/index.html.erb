@@ -10,7 +10,7 @@
 	<% if tarefa.DtTermino.nil? %>
 		<span id="message">Indefinida</span>
 	<% else %>
-		<span id="message"><%= tarefa.DtTermino.strftime("%d/%m/%Y") %></span>
+		<span id="message"><%=l tarefa.DtTermino %></span>
 	<% end %>
 		<span id="ctr"><%= link_to tarefa.Nome, projeto_tarefa_path(@projeto, tarefa) %></span>
 		<span id="sign"></span>
