@@ -5,8 +5,7 @@ class TarefasController < ApplicationController
   # GET /tarefas
   # GET /tarefas.xml
   def index
-    @tarefas = @projeto.tarefas
-    #@tarefas = @projeto.tarefas.all(:order => "DtTermino desc")
+    @tarefas = @projeto.tarefas.all(:order => "DtTermino")
     
     respond_to do |format|
       format.html # index.html.erb
