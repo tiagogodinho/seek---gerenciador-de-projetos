@@ -11,7 +11,7 @@ ul, li, form, span		{margin:0px; padding:0px; list-style-type:none;}
 form      {width:100%; height:auto; float:left; padding-top:55px; padding-bottom:55px;}
 form ul		{width:auto; height:auto; float:left; padding: 0 55px 0 55px;}
 form li		{width:100%; height:auto; float:left; line-height:25px;}
-form input      {padding:0 0 0 30px;}
-form #login	    {width:385px; height:35px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/user.jpg) no-repeat left center; font-size:14px; line-height:35px;}
-form #password	{width:385px; height:35px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/senha.jpg) no-repeat left center; font-size:14px; line-height:35px;}
-form .enviar	  {float:right; padding-top:10px;}
+form input      {padding:10px 10px 10px 30px;}
+form #login	    {width:385px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/user.jpg) no-repeat left center; font-size:14px;}
+form #password	{width:385px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/senha.jpg) no-repeat left center; font-size:14px;}
+form .enviar	  {float:right; padding:10px 0 0 0;}
