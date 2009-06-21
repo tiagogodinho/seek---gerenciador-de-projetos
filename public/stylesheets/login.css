@@ -8,11 +8,10 @@ ul, li, form, span		{margin:0px; padding:0px; list-style-type:none;}
 .logo img	{padding-left:55px;}
 .titulo		{width:50%; height:auto; float:left; text-align:center; padding-top:15px;}
 
-form		{width:100%; height:auto; float:left; padding-top:55px; padding-bottom:55px;}
-form ul		{width:390px; height:auto; float:left; padding-left:55px;}
+form      {width:100%; height:auto; float:left; padding-top:55px; padding-bottom:55px;}
+form ul		{width:auto; height:auto; float:left; padding: 0 55px 0 55px;}
 form li		{width:100%; height:auto; float:left; line-height:25px;}
-form #login	{width:385px; height:35px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/user.jpg) no-repeat left center;  text-indent:35px; font-size:14px; line-height:35px;}
-
-form #password	{width:385px; height:35px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/senha.jpg) no-repeat left center; text-indent:35px;  font-size:14px; line-height:35px;}
-
-form .enviar	{float:right; margin-right:3px; padding-top:5px;}
+form input      {padding:0 0 0 30px;}
+form #login	    {width:385px; height:35px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/user.jpg) no-repeat left center; font-size:14px; line-height:35px;}
+form #password	{width:385px; height:35px; float:left; border:solid 1px #3F7CA9; background:#EAF1F7 url(/images/senha.jpg) no-repeat left center; font-size:14px; line-height:35px;}
+form .enviar	  {float:right; padding-top:10px;}
