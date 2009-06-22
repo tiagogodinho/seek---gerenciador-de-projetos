@@ -27,8 +27,7 @@
   <% if comment.image_file_name %>
   <%= image_tag comment.image.url, :width => 500 %>
   <% end %>
-  
-  <%= comment.comment %>
+  <p><%= comment.comment %></p>
 </div>
 <% end %>
 
