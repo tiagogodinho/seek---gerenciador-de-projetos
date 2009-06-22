@@ -14,7 +14,8 @@
           GERENCIADOR DE PROJETOS
         </div>
       </div>
-      <% form_tag login_path do %>
+      <% form_tag auth_path do %>
+        <div class="error"><%= flash[:error] %></div>
         <ul>
           <li>Login</li>
           <li><%= text_field_tag 'login', @login %></li>
