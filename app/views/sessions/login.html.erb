@@ -15,7 +15,9 @@
         </div>
       </div>
       <% form_tag auth_path do %>
+        <% if flash[:error] != nil %>
         <div class="error"><%= flash[:error] %></div>
+        <% end %>
         <ul>
           <li>Login</li>
           <li><%= text_field_tag 'login', @login %></li>
