@@ -1,15 +1,5 @@
 <h3>Novo comentário</h3>
 
-<% form_for([@projeto, @tarefa, @comment]) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
-  </p>
-  <p>
-    <%= f.submit 'Criar' %>
-  </p>
-<% end %>
+<%= render :partial => "form" %>
 
 <%= link_to 'Voltar', projeto_tarefa_comments_path(@projeto, @tarefa) %>
