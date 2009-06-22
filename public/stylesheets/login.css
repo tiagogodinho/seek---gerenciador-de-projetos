@@ -4,6 +4,7 @@ ul, li, form, span		{margin:0px; padding:0px; list-style-type:none;}
 
 .box		{width:500px; height:auto; float:left; background-color:#FFF; border:solid 10px #CCC; padding:10px; position:relative; left:50%; margin-left:-250px; margin-top:50px;}
 .topo		{width:100%; height:auto; float:left; margin-top:10px;}
+.error  {width:385px; height:auto; float:left; margin-top:10px; background-color:#C52F24; color:#FFF; margin-left:55px; padding:10px 10px 10px 30px;}
 .logo		{width:49%; height:auto; float:left; border-right:solid 1px #CCC;}
 .logo img	{padding-left:55px;}
 .titulo		{width:50%; height:auto; float:left; text-align:center; padding-top:15px;}
