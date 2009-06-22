@@ -24,6 +24,9 @@
   </div>
   <strong><%= link_to comment.pessoa.Nome, pessoa_path(comment.pessoa.id) %></strong> - <%=l comment.created_at %>
   <br />
+  <% if comment.image_file_name %>
+  <%= image_tag comment.image.url, :width => 500 %>
+  <% end %>
   
   <%= comment.comment %>
 </div>
